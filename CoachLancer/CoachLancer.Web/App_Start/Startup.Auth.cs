@@ -1,13 +1,11 @@
-﻿using System;
+﻿using CoachLance.Data.Models;
+using CoachLancer.Data;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
-using Microsoft.Owin.Security.Google;
 using Owin;
-using CoachLancer.Web.Models;
-using CoachLance.Data.Models;
-using CoachLancer.Data;
+using System;
 
 namespace CoachLancer.Web
 {
