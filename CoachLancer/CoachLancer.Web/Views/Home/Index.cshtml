@@ -1,3 +1,95 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+
+<div class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="intro-message">
+                    <h1>CoachLancer</h1>
+                    <h3>Step your game up!</h3>
+                    <hr class="intro-divider">
+                    @if (!Request.IsAuthenticated)
+                    {
+                        <ul class="list-inline intro-social-buttons">
+                            <li>
+                                @Html.ActionLink("I am a Coach", "Contact", "Home", new { area = "" }, new { @class = "btn btn-info btn-lg" })
+                            </li>
+                            <li>
+                                @Html.ActionLink("I am a Football player", "Contact", "Home", new { area = "" }, new { @class = "btn btn-info btn-lg" })
+                            </li>
+                        </ul>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content-section-a">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-sm-6">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading">If you are a coach</h2>
+                <p class="lead">Use our site to reach more football players who seek individual training.Help them become better and you will get higher rating. The higher rating you get the higher chance to have more players to train!</p>
+            </div>
+            <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                <img class="img-responsive" src="~/Content/Images/ball.jpeg" alt="">
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+</div>
+<!-- /.content-section-a -->
+
+<div class="content-section-b">
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading">If you are a football player</h2>
+                <p class="lead">You can benefit from the features which our site offers. At any time you can view you individual statistics, your performance and connect with coaches and managers!</p>
+            </div>
+            <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                <img class="img-responsive" src="~/Content/Images/statistics.jpeg" alt="">
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+</div>
+<!-- /.content-section-b -->
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="list-inline">
+                    <li>
+                        @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "page-scroll" })
+                    </li>
+                    <li class="footer-menu-divider">&sdot;</li>
+                    <li>
+                        @Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "page-scroll" })
+                    </li>
+                    <li class="footer-menu-divider">&sdot;</li>
+                    <li>
+                        @Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "page-scroll" })
+                    </li>
+                </ul>
+                <p class="copyright text-muted small">Copyright &copy; CoachLancer 2017. All Rights Reserved</p>
+            </div>
+        </div>
+    </div>
+</footer>
