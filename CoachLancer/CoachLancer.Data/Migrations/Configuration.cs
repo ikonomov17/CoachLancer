@@ -30,8 +30,12 @@ namespace CoachLancer.Data.Migrations
             {
                 var roleStore = new RoleStore<IdentityRole>(context);
                 var roleManager = new RoleManager<IdentityRole>(roleStore);
-                var role = new IdentityRole { Name = "Admin" };
-                roleManager.Create(role);
+                var admin = new IdentityRole { Name = "Admin" };
+                var coach = new  IdentityRole { Name = "Coach" };
+                var player = new  IdentityRole { Name = "Player" };
+                roleManager.Create(admin);
+                roleManager.Create(coach);
+                roleManager.Create(player);
 
                 var userStore = new UserStore<User>(context);
                 var userManager = new UserManager<User>(userStore);

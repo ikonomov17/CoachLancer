@@ -62,6 +62,10 @@
     <Compile Include="Migrations\201709302033267_Update user model.Designer.cs">
       <DependentUpon>201709302033267_Update user model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710060957185_AddedRolesToSeed.cs" />
+    <Compile Include="Migrations\201710060957185_AddedRolesToSeed.Designer.cs">
+      <DependentUpon>201710060957185_AddedRolesToSeed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MsSqlDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -84,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709302033267_Update user model.resx">
       <DependentUpon>201709302033267_Update user model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710060957185_AddedRolesToSeed.resx">
+      <DependentUpon>201710060957185_AddedRolesToSeed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
