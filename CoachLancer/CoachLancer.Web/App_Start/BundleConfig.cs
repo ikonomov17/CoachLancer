@@ -27,6 +27,9 @@ namespace CoachLancer.Web
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
                       "~/Content/styles.css"));
+
+            bundles.Add(new StyleBundle("~/Content/css/register").Include(
+                "~/Content/register_form.css"));
         }
     }
 }
