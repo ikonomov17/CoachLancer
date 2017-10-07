@@ -55,8 +55,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstracts\DataModel.cs" />
+    <Compile Include="Coach.cs" />
     <Compile Include="Contracts\IAuditable.cs" />
     <Compile Include="Contracts\IDeletable.cs" />
+    <Compile Include="Enums\GenderEnum.cs" />
+    <Compile Include="Gender.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="Rating.cs" />
+    <Compile Include="Enums\RatingEnum.cs" />
+    <Compile Include="Teams.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

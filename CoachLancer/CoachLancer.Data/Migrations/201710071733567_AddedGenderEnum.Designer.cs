@@ -7,13 +7,13 @@ namespace CoachLancer.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class AddedRolesToSeed : IMigrationMetadata
+    public sealed partial class AddedGenderEnum : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedRolesToSeed));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedGenderEnum));
         
         string IMigrationMetadata.Id
         {
-            get { return "201710060957185_AddedRolesToSeed"; }
+            get { return "201710071733567_AddedGenderEnum"; }
         }
         
         string IMigrationMetadata.Source

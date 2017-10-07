@@ -1,9 +1,11 @@
 namespace CoachLancer.Data.Migrations
 {
     using CoachLance.Data.Models;
+    using CoachLance.Data.Models.Enums;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using System;
+    using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
@@ -19,6 +21,9 @@ namespace CoachLancer.Data.Migrations
         protected override void Seed(CoachLancer.Data.MsSqlDbContext context)
         {
             this.SeedAdmin(context);
+            this.SeedEnumValues<Rating, RatingEnum>(context.Ratings, @enum => @enum);
+            this.SeedEnumValues<Gender, GenderEnum>(context.Genders, @enum => @enum);
+            context.SaveChanges();
         }
 
         private void SeedAdmin(MsSqlDbContext context)
@@ -45,5 +50,12 @@ namespace CoachLancer.Data.Migrations
                 userManager.AddToRole(user.Id, "Admin");
             }
         }
+
+        private void SeedEnumValues<T, TEnum>(IDbSet<T> dbSet, Func<TEnum, T> converter)
+            where T : class => Enum.GetValues(typeof(TEnum))
+            .Cast<object>()
+            .Select(value => converter((TEnum)value))
+            .ToList()
+            .ForEach(instance => dbSet.AddOrUpdate(instance));
     }
 }

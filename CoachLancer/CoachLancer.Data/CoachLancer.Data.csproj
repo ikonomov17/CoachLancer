@@ -54,17 +54,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201709301956340_Initial migration.cs" />
-    <Compile Include="Migrations\201709301956340_Initial migration.Designer.cs">
-      <DependentUpon>201709301956340_Initial migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709302033267_Update user model.cs" />
-    <Compile Include="Migrations\201709302033267_Update user model.Designer.cs">
-      <DependentUpon>201709302033267_Update user model.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710060957185_AddedRolesToSeed.cs" />
-    <Compile Include="Migrations\201710060957185_AddedRolesToSeed.Designer.cs">
-      <DependentUpon>201710060957185_AddedRolesToSeed.cs</DependentUpon>
+    <Compile Include="Migrations\201710071733567_AddedGenderEnum.cs" />
+    <Compile Include="Migrations\201710071733567_AddedGenderEnum.Designer.cs">
+      <DependentUpon>201710071733567_AddedGenderEnum.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MsSqlDbContext.cs" />
@@ -83,14 +75,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201709301956340_Initial migration.resx">
-      <DependentUpon>201709301956340_Initial migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709302033267_Update user model.resx">
-      <DependentUpon>201709302033267_Update user model.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710060957185_AddedRolesToSeed.resx">
-      <DependentUpon>201710060957185_AddedRolesToSeed.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710071733567_AddedGenderEnum.resx">
+      <DependentUpon>201710071733567_AddedGenderEnum.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

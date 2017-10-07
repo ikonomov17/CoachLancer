@@ -15,6 +15,12 @@ namespace CoachLancer.Data
         {
         }
 
+        public IDbSet<Rating> Ratings { get; set; }
+
+        public IDbSet<Coach> Coaches { get; set; }
+
+        public IDbSet<Gender> Genders { get; set; }
+
         public override int SaveChanges()
         {
             this.ApplyAuditInfoRules();

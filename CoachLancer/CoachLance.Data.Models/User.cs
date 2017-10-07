@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
 
 namespace CoachLance.Data.Models
 {
@@ -22,6 +23,18 @@ namespace CoachLance.Data.Models
 
         [DataType(DataType.DateTime)]
         public DateTime? ModifiedOn { get; set; }
+
+        public int Age { get; set; }
+
+        public virtual Gender Gender { get; set; }
+
+        public string Location { get; set; }
+
+        public ICollection<string> Languages { get; set; }
+
+        public string Nationality { get; set; }
+
+        public string AboutMe { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
         {
