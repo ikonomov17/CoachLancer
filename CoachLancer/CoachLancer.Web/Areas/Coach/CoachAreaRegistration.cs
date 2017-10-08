@@ -14,6 +14,8 @@ namespace CoachLancer.Web.Areas.Coach
 
         public override void RegisterArea(AreaRegistrationContext context) 
         {
+            context.Routes.LowercaseUrls = true;
+
             context.MapRoute(
                 "Coach_default",
                 "Coach/{controller}/{action}/{id}",

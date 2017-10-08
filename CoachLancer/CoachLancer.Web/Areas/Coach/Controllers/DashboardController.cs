@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace CoachLancer.Web.Areas.Coach.Controllers
 {
-    public class DashboardController : Controller
+    public class DashboardController : CoachController
     {
         // GET: Coach/Dashboard
         public ActionResult Index()
