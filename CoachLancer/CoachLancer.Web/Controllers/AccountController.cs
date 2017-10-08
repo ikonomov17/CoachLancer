@@ -1,5 +1,6 @@
 ﻿using CoachLance.Data.Models;
 using CoachLancer.Web.Models;
+using CoachLancer.Web.ViewModels.Factories;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
@@ -150,14 +151,17 @@ namespace CoachLancer.Web.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel model)
+        public async Task<ActionResult> Register(RegisterViewModel model, UserFactory userFactory)
         {
             var addedToRole = new IdentityResult(new string[] { "Such role does not exist!" });
             if (this.RoleManager.RoleExists(model.Role))
             {
                 if (this.ModelState.IsValid)
                 {
-                    var user = new User { UserName = model.Email, Email = model.Email };
+                    User user = userFactory.CreateUserByRole(model.Role);
+                    user.UserName = model.Email;
+                    user.Email = model.Email;
+
                     var result = await this.UserManager.CreateAsync(user, model.Password);
 
                     if (result.Succeeded)
