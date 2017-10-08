@@ -30,6 +30,13 @@ namespace CoachLancer.Web
 
             bundles.Add(new StyleBundle("~/Content/css/register").Include(
                 "~/Content/register_form.css"));
+
+            bundles.Add(new StyleBundle("~/Content/css/admin").Include(
+                "~/Content/bootstrap.css",
+                "~/Content/admin.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/admin").Include(
+                "~/Scripts/admin.js"));
         }
     }
 }
