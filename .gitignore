@@ -3,6 +3,9 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+#My Preferences
+Migrations/
+
 # User-specific files
 *.suo
 *.user

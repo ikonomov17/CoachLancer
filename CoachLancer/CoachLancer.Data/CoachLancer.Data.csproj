@@ -54,9 +54,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201710071733567_AddedGenderEnum.cs" />
-    <Compile Include="Migrations\201710071733567_AddedGenderEnum.Designer.cs">
-      <DependentUpon>201710071733567_AddedGenderEnum.cs</DependentUpon>
+    <Compile Include="Migrations\201710081007482_RemovedCoachesDbSetFromContext.cs" />
+    <Compile Include="Migrations\201710081007482_RemovedCoachesDbSetFromContext.Designer.cs">
+      <DependentUpon>201710081007482_RemovedCoachesDbSetFromContext.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MsSqlDbContext.cs" />
@@ -75,8 +75,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710071733567_AddedGenderEnum.resx">
-      <DependentUpon>201710071733567_AddedGenderEnum.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710081007482_RemovedCoachesDbSetFromContext.resx">
+      <DependentUpon>201710081007482_RemovedCoachesDbSetFromContext.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
