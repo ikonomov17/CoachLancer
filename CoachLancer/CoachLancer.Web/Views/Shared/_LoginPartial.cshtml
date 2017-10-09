@@ -1,12 +1,12 @@
 ﻿@using Microsoft.AspNet.Identity
 @if (Request.IsAuthenticated)
 {
-    using (Html.BeginForm("LogOff", "Account", routeValues: new { area="" },method: FormMethod.Post, htmlAttributes: new { id = "logoutForm", @class = "navbar-right" }))
+    using (Html.BeginForm("LogOff", "Account", routeValues: new { area = "" }, method: FormMethod.Post, htmlAttributes: new { id = "logoutForm", @class = "navbar-right" }))
     {
         @Html.AntiForgeryToken()
 
         <ul class="nav navbar-nav navbar-right">
-            <li>@Html.ActionLink("My Dashboard", "Index", "Dashboard", routeValues: null, htmlAttributes: null)</li>
+            @Html.Partial("_RoleMenusPartial")
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello @User.Identity.GetUserName()<span class="caret"></span></a>
                 <ul class="dropdown-menu">

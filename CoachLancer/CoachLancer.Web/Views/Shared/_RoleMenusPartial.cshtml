@@ -1,0 +1,10 @@
+﻿@using CoachLancer.Web.Extensions
+
+@{
+    var roles = User.Identity.GetRoles();
+}
+
+@foreach (var role in roles)
+{
+    <li>@Html.ActionLink($"{role} Dashboard", "Index", "Dashboard", routeValues: new { area = role }, htmlAttributes: null)</li>
+}
