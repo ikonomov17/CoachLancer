@@ -58,6 +58,10 @@
     <Compile Include="Migrations\201710081007482_RemovedCoachesDbSetFromContext.Designer.cs">
       <DependentUpon>201710081007482_RemovedCoachesDbSetFromContext.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710091840055_AddedPositionsEnum.cs" />
+    <Compile Include="Migrations\201710091840055_AddedPositionsEnum.Designer.cs">
+      <DependentUpon>201710091840055_AddedPositionsEnum.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MsSqlDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,6 +81,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201710081007482_RemovedCoachesDbSetFromContext.resx">
       <DependentUpon>201710081007482_RemovedCoachesDbSetFromContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710091840055_AddedPositionsEnum.resx">
+      <DependentUpon>201710091840055_AddedPositionsEnum.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

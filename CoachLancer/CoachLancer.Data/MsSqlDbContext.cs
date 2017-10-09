@@ -15,9 +15,18 @@ namespace CoachLancer.Data
         {
         }
 
+
+        public IDbSet<Player> Players { get; set; }
+
+        public IDbSet<Coach> Coaches { get; set; }
+
+        // Enum lookup tables
         public IDbSet<Rating> Ratings { get; set; }
 
         public IDbSet<Gender> Genders { get; set; }
+
+        public IDbSet<Position> Positions { get; set; }
+
 
         public override int SaveChanges()
         {

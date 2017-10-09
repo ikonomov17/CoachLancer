@@ -23,6 +23,7 @@ namespace CoachLancer.Data.Migrations
             this.SeedAdmin(context);
             this.SeedEnumValues<Rating, RatingEnum>(context.Ratings, @enum => @enum);
             this.SeedEnumValues<Gender, GenderEnum>(context.Genders, @enum => @enum);
+            this.SeedEnumValues<Position, PositionEnum>(context.Positions, @enum => @enum);
             context.SaveChanges();
         }
 
