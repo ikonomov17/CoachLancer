@@ -164,10 +164,10 @@ namespace CoachLancer.Web.Controllers
 
                     var result = await this.UserManager.CreateAsync(user, model.Password);
 
-                    if (result.Succeeded)
-                    {
-                        addedToRole = this.UserManager.AddToRole(user.Id, model.Role);
+                    addedToRole = this.UserManager.AddToRole(user.Id, model.Role);
 
+                    if (result.Succeeded && addedToRole.Succeeded)
+                    {
                         await this.SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
                         // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
