@@ -7,6 +7,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Collections.Generic;
+using CoachLance.Data.Models.Enums;
 
 namespace CoachLance.Data.Models
 {
@@ -24,7 +25,8 @@ namespace CoachLance.Data.Models
         [DataType(DataType.DateTime)]
         public DateTime? ModifiedOn { get; set; }
 
-        public int Age { get; set; }
+        [DataType(DataType.DateTime)]
+        public DateTime? DateOfBirth { get; set; }
 
         public virtual Gender Gender { get; set; }
 

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace CoachLance.Data.Models
 {
@@ -10,8 +11,8 @@ namespace CoachLance.Data.Models
 
         public ICollection<string> Licenses { get; set; }
 
-        public double PriceForHourTraining { get; set; }
+        public double PricePerHourTraining { get; set; }
 
-        public int Experience { get; set; }
+        public DateTime StartedCoaching { get; set; }
     }
 }

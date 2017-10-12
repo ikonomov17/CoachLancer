@@ -7,6 +7,7 @@
 
     @Styles.Render("~/Content/css/admin")
     @Styles.Render("~/Content/fontawesome/font-awesome.css")
+    @RenderSection("styles", required: false)
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
@@ -20,7 +21,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("CoachLancer", "Index", "Home",routeValues: new { area = ""}, htmlAttributes: new { @class = "navbar-brand" })
+                @Html.ActionLink("CoachLancer", "Index", "Home", routeValues: new { area = "" }, htmlAttributes: new { @class = "navbar-brand" })
             </div>
             <!-- /.navbar-header -->
             <ul class="nav navbar-top-links navbar-right">
@@ -68,6 +69,5 @@
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/admin")
     @RenderSection("scripts", required: false)
-    @RenderSection("styles", required: false)
 </body>
 </html>
