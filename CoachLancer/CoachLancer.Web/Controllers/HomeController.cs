@@ -1,9 +1,17 @@
-﻿using System.Web.Mvc;
+﻿using CoachLancer.Services;
+using System.Web.Mvc;
 
 namespace CoachLancer.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ICoachService coachService;
+
+        public HomeController(ICoachService coachService)
+        {
+            this.coachService = coachService;
+        }
+
         public ActionResult Index()
         {
             return View();
@@ -19,6 +27,7 @@ namespace CoachLancer.Web.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
+            var coaches = this.coachService.GetAll();
 
             return View();
         }

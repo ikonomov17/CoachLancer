@@ -19,6 +19,8 @@ namespace CoachLancer.Web.App_Start
     using CoachLancer.Web.ViewModels.Factories;
     using CoachLance.Data.Models;
     using Microsoft.Owin.Security;
+    using CoachLancer.Services;
+    using CoachLancer.Data.SaveContext;
 
     public static class NinjectWebCommon
     {
@@ -91,6 +93,9 @@ namespace CoachLancer.Web.App_Start
             kernel.Bind(typeof(IRoleStore<IdentityRole, string>)).To(typeof(RoleStore<IdentityRole>));
             kernel.Bind(typeof(RoleManager<IdentityRole>)).ToSelf();
             kernel.Bind<IUserFactory>().To<UserFactory>().InSingletonScope();
+
+            kernel.Bind<ICoachService>().To<CoachService>();
+            kernel.Bind<ISaveContext>().To<SaveContext>();
         }
     }
 }

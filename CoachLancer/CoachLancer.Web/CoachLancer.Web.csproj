@@ -273,10 +273,10 @@
     <Content Include="Content\fontawesome\font-awesome.css" />
     <Content Include="Content\fontawesome\font-awesome.min.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
-    <Content Include="Content\Images\ball.jpeg" />
-    <Content Include="Content\Images\night_stadium.jpeg" />
+    <Content Include="Content\Images\ball.jpg" />
     <Content Include="Content\Images\me.jpg" />
-    <Content Include="Content\Images\statistics.jpeg" />
+    <Content Include="Content\Images\night_stadium.jpg" />
+    <Content Include="Content\Images\statistics.jpg" />
     <Content Include="Content\register_form.css" />
     <Content Include="Content\styles.css" />
     <Content Include="favicon.ico" />
@@ -382,6 +382,10 @@
     <ProjectReference Include="..\CoachLancer.Data\CoachLancer.Data.csproj">
       <Project>{1B3E8832-04AE-4D35-86B8-F51624AE4894}</Project>
       <Name>CoachLancer.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoachLancer.Services\CoachLancer.Services.csproj">
+      <Project>{c0d8c685-8787-4fd8-8299-2896fe4d5189}</Project>
+      <Name>CoachLancer.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
