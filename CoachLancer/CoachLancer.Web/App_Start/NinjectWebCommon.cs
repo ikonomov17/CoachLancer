@@ -17,6 +17,8 @@ namespace CoachLancer.Web.App_Start
     using Microsoft.AspNet.Identity.EntityFramework;
     using Microsoft.AspNet.Identity;
     using CoachLancer.Web.ViewModels.Factories;
+    using CoachLance.Data.Models;
+    using Microsoft.Owin.Security;
 
     public static class NinjectWebCommon
     {
@@ -74,11 +76,20 @@ namespace CoachLancer.Web.App_Start
                     .SelectAllClasses()
                     .BindDefaultInterface();
             });
-
             kernel.Bind(typeof(DbContext), typeof(MsSqlDbContext)).To(typeof(MsSqlDbContext)).InRequestScope();
             kernel.Bind(typeof(IEfRepository<>)).To(typeof(EfRepository<>));
+           
+            // Account controller constructor
+            kernel.Bind<IUserStore<User>>().To<UserStore<User>>();
+            kernel.Bind<UserManager<User>>().ToSelf();
+            kernel.Bind<IAuthenticationManager>().ToMethod(
+                c =>
+                    HttpContext.Current.GetOwinContext().Authentication).InRequestScope();
+            kernel.Bind<ApplicationUserManager>().ToSelf();
+            //
+
             kernel.Bind(typeof(IRoleStore<IdentityRole, string>)).To(typeof(RoleStore<IdentityRole>));
-            kernel.Bind(typeof(RoleManager<IdentityRole>)).To(typeof(RoleManager<IdentityRole>));
+            kernel.Bind(typeof(RoleManager<IdentityRole>)).ToSelf();
             kernel.Bind<IUserFactory>().To<UserFactory>().InSingletonScope();
         }
     }

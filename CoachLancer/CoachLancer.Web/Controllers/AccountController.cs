@@ -18,11 +18,19 @@ namespace CoachLancer.Web.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private readonly RoleManager<IdentityRole> roleManager;
+        private readonly UserFactory userFactory;
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+        public AccountController(
+            ApplicationUserManager userManager, 
+            ApplicationSignInManager signInManager,
+            UserFactory userFactory,
+            RoleManager<IdentityRole> roleManager)
         {
             this.UserManager = userManager;
             this.SignInManager = signInManager;
+            this.roleManager = roleManager;
+            this.userFactory = userFactory;
         }
 
         public ApplicationSignInManager SignInManager
@@ -48,9 +56,6 @@ namespace CoachLancer.Web.Controllers
                 _userManager = value;
             }
         }
-
-        [Inject]
-        public RoleManager<IdentityRole> RoleManager { get; set; }
 
         //
         // GET: /Account/Login
@@ -147,14 +152,14 @@ namespace CoachLancer.Web.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel model, UserFactory userFactory)
+        public async Task<ActionResult> Register(RegisterViewModel model)
         {
             var addedToRole = new IdentityResult(new string[] { "Such role does not exist!" });
-            if (this.RoleManager.RoleExists(model.Role))
+            if (this.roleManager.RoleExists(model.Role))
             {
                 if (this.ModelState.IsValid)
                 {
-                    User user = userFactory.CreateUserByRole(model.Role);
+                    User user = this.userFactory.CreateUserByRole(model.Role);
                     user.UserName = model.Email;
                     user.Email = model.Email;
 

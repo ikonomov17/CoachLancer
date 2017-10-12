@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace CoachLance.Data.Models
 {
@@ -13,6 +14,7 @@ namespace CoachLance.Data.Models
 
         public double PricePerHourTraining { get; set; }
 
-        public DateTime StartedCoaching { get; set; }
+        [DataType(DataType.DateTime)]
+        public DateTime? StartedCoaching { get; set; }
     }
 }
