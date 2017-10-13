@@ -1,4 +1,5 @@
-﻿using CoachLance.Data.Models;
+﻿using Bytes2you.Validation;
+using CoachLance.Data.Models;
 using CoachLancer.Data.Repositories;
 using CoachLancer.Data.SaveContext;
 using CoachLancer.Services.Models;
@@ -14,6 +15,8 @@ namespace CoachLancer.Services
 
         public CoachService(IEfRepository<Coach> coachesRepository, ISaveContext context)
         {
+            Guard.WhenArgument(coachesRepository, "coaches repository").IsNull().Throw();
+            Guard.WhenArgument(context, "context").IsNull().Throw();
             this.coachesRepository = coachesRepository;
             this.context = context;
         }
@@ -28,6 +31,7 @@ namespace CoachLancer.Services
 
         public IEnumerable<CoachModel> GetLastRegisteredCoaches(int count)
         {
+            Guard.WhenArgument(count, "Coaches count").IsLessThan(0).Throw();
             return this.coachesRepository
                 .All
                 .OrderByDescending(c => c.CreatedOn)
