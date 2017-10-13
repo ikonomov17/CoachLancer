@@ -1,4 +1,6 @@
 ﻿using CoachLancer.Services;
+using CoachLancer.Web.ViewModels.Home;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace CoachLancer.Web.Controllers
@@ -24,12 +26,14 @@ namespace CoachLancer.Web.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Explore()
         {
-            ViewBag.Message = "Your contact page.";
-            var coaches = this.coachService.GetAll();
 
-            return View();
+            var coaches = this.coachService.GetLastRegisteredCoaches(10)
+                .Select(c => new CoachThumbnailViewModel(c))
+                .ToList();
+
+            return View(coaches);
         }
     }
 }

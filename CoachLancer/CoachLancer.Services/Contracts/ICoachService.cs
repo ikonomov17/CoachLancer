@@ -1,10 +1,12 @@
-﻿using CoachLance.Data.Models;
+﻿using CoachLancer.Services.Models;
 using System.Collections.Generic;
 
 namespace CoachLancer.Services
 {
     public interface ICoachService
     {
-        IEnumerable<Coach> GetAll();
+        IEnumerable<CoachModel> GetAll();
+
+        IEnumerable<CoachModel> GetLastRegisteredCoaches(int count);
     }
 }

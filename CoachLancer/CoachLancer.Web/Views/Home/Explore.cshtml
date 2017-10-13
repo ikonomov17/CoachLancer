@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Latest registered user";
+}
+
+@model IEnumerable<CoachLancer.Web.ViewModels.Home.CoachThumbnailViewModel>
+
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+@foreach (var coach in Model)
+{
+    <h3>@coach.Username</h3>
+    <p>@coach.UserSince</p>
+}
