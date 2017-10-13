@@ -8,8 +8,6 @@ namespace CoachLance.Data.Models
     {
         public virtual ICollection<Teams> Teams { get; set; }
 
-        public virtual Rating Rating { get; set; }
-
         public ICollection<string> Licenses { get; set; }
 
         public double PricePerHourTraining { get; set; }

@@ -27,6 +27,7 @@ namespace CoachLancer.Data
 
         public IDbSet<Position> Positions { get; set; }
 
+        public IDbSet<CoachesRatings> CoachesRatings { get; set; }
 
         public override int SaveChanges()
         {

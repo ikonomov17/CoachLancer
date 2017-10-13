@@ -19,6 +19,8 @@ namespace CoachLancer.Services.Models
                 this.UserSince = coach.CreatedOn;
             }
         }
+        public int MyProperty { get; set; }
+
         public string Username { get; set; }
 
         public DateTime? UserSince { get; set; }

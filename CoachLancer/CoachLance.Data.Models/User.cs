@@ -28,6 +28,10 @@ namespace CoachLance.Data.Models
         [DataType(DataType.DateTime)]
         public DateTime? DateOfBirth { get; set; }
 
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
+
         public virtual Gender Gender { get; set; }
 
         public string Location { get; set; }
