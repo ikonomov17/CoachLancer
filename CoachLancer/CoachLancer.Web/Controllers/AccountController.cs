@@ -22,7 +22,7 @@ namespace CoachLancer.Web.Controllers
         private readonly UserFactory userFactory;
 
         public AccountController(
-            ApplicationUserManager userManager, 
+            ApplicationUserManager userManager,
             ApplicationSignInManager signInManager,
             UserFactory userFactory,
             RoleManager<IdentityRole> roleManager)
@@ -154,20 +154,19 @@ namespace CoachLancer.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
-            var addedToRole = new IdentityResult(new string[] { "Such role does not exist!" });
-            if (this.roleManager.RoleExists(model.Role))
+            if (this.roleManager.RoleExists(model.Role) && this.ModelState.IsValid)
             {
-                if (this.ModelState.IsValid)
+                User user = this.userFactory.CreateUserByRole(model.Role);
+                user.UserName = model.Email;
+                user.Email = model.Email;
+
+                var result = await this.UserManager.CreateAsync(user, model.Password);
+
+                if (result.Succeeded)
                 {
-                    User user = this.userFactory.CreateUserByRole(model.Role);
-                    user.UserName = model.Email;
-                    user.Email = model.Email;
-
-                    var result = await this.UserManager.CreateAsync(user, model.Password);
-
-                    addedToRole = this.UserManager.AddToRole(user.Id, model.Role);
-
-                    if (result.Succeeded && addedToRole.Succeeded)
+                    // Should be in this if because User Creation could fail and there won't be user.Id
+                    var addedToRole = this.UserManager.AddToRole(user.Id, model.Role);
+                    if (addedToRole.Succeeded)
                     {
                         await this.SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
@@ -179,11 +178,13 @@ namespace CoachLancer.Web.Controllers
 
                         return RedirectToAction("Index", "Home");
                     }
+                    else
+                    {
+                        AddErrors(addedToRole);
+                    }
                     AddErrors(result);
                 }
             }
-
-            AddErrors(addedToRole);
 
             // If we got this far, something failed, redisplay form
             return View(model);
