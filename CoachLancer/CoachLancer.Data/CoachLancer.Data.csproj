@@ -70,6 +70,10 @@
     <Compile Include="Migrations\201710121353481_UpdatedCoachDateTimeProperty.Designer.cs">
       <DependentUpon>201710121353481_UpdatedCoachDateTimeProperty.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710131318402_RemovedRatings.cs" />
+    <Compile Include="Migrations\201710131318402_RemovedRatings.Designer.cs">
+      <DependentUpon>201710131318402_RemovedRatings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MsSqlDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -100,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710121353481_UpdatedCoachDateTimeProperty.resx">
       <DependentUpon>201710121353481_UpdatedCoachDateTimeProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710131318402_RemovedRatings.resx">
+      <DependentUpon>201710131318402_RemovedRatings.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
