@@ -16,6 +16,7 @@ namespace CoachLancer.Services
         {
             Guard.WhenArgument(coachesRepository, "coaches repository").IsNull().Throw();
             Guard.WhenArgument(context, "context").IsNull().Throw();
+
             this.coachesRepository = coachesRepository;
             this.context = context;
         }
@@ -30,6 +31,7 @@ namespace CoachLancer.Services
         public IEnumerable<Coach> GetLastRegisteredCoaches(int count)
         {
             Guard.WhenArgument(count, "Coaches count").IsLessThan(0).Throw();
+
             return this.coachesRepository
                 .All
                 .OrderByDescending(c => c.CreatedOn)
@@ -37,7 +39,7 @@ namespace CoachLancer.Services
                 .ToList();
         }
 
-        public Coach GetCoachByEmail(string username)
+        public Coach GetCoachByUsername(string username)
         {
             Guard.WhenArgument(username, "username").IsNullOrEmpty().Throw();
 
@@ -48,7 +50,8 @@ namespace CoachLancer.Services
 
         public void UpdateCoach(Coach model)
         {
-            
+            Guard.WhenArgument(model, "coach model").IsNull().Throw();
+
             this.coachesRepository.Update(model);
             this.context.Commit();
         }

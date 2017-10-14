@@ -18,7 +18,7 @@ namespace CoachLancer.Web.Areas.Coach.Controllers
 
         public ActionResult Index()
         {
-            var coach = this.coachService.GetCoachByEmail(this.User.Identity.Name);
+            var coach = this.coachService.GetCoachByUsername(this.User.Identity.Name);
             var viewModel = this.mapper.Map<ProfileViewModel>(coach);
             return View(viewModel);
         }
@@ -26,7 +26,7 @@ namespace CoachLancer.Web.Areas.Coach.Controllers
         [HttpGet]
         public ActionResult Edit()
         {
-            var coach = this.coachService.GetCoachByEmail(this.User.Identity.Name);
+            var coach = this.coachService.GetCoachByUsername(this.User.Identity.Name);
             var viewModel = this.mapper.Map<ProfileViewModel>(coach);
             return PartialView(viewModel);
         }
@@ -35,7 +35,7 @@ namespace CoachLancer.Web.Areas.Coach.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Update(ProfileViewModel model)
         {
-            var coach = this.coachService.GetCoachByEmail(this.User.Identity.Name);
+            var coach = this.coachService.GetCoachByUsername(this.User.Identity.Name);
             coach.FirstName = model.FirstName;
             coach.LastName = model.LastName;
             coach.Email = model.Email;
