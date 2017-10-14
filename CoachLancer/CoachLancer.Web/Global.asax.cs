@@ -1,6 +1,8 @@
 ﻿using CoachLancer.Data;
 using CoachLancer.Data.Migrations;
+using CoachLancer.Web.App_Start;
 using System.Data.Entity;
+using System.Reflection;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -21,6 +23,9 @@ namespace CoachLancer.Web
             // Remove WebForms view engine
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new RazorViewEngine());
+
+            var mapper = new AutoMapperConfig();
+            mapper.Execute(Assembly.GetExecutingAssembly());
         }
     }
 }

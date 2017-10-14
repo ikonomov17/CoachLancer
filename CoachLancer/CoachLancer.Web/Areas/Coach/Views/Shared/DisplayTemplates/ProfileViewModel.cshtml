@@ -69,3 +69,12 @@
         </tr>
     </tbody>
 </table>
+<div class="panel-footer">
+    @Ajax.ActionLink("Edit", "Edit", new AjaxOptions()
+    {
+        HttpMethod = "GET",
+        AllowCache = false,
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "table-holder"
+    })
+</div>

@@ -1,43 +1,56 @@
 ﻿@using CoachLancer.Web.Areas.Coach.ViewModels
 @model ProfileViewModel
 
-<table class="table table-hover">
-    <tbody>
-        <tr>
-            <td>@Html.LabelFor(x => x.FirstName)</td>
-            <td>
-                @Html.EditorFor(x => x.FirstName)
-            </td>
-        </tr>
-        <tr>
-            <td>@Html.LabelFor(x => x.LastName)</td>
-            <td>
-                @Html.EditorFor(x => x.LastName)
-            </td>
-        </tr>
-        <tr>
-            <td>@Html.LabelFor(x => x.Username)</td>
-            <td>
-                @Html.EditorFor(x => x.Username)
-            </td>
-        </tr>
-        <tr>
-            <td>@Html.LabelFor(x => x.PricePerHourTraining)</td>
-            <td>
-                @Html.EditorFor(x => x.PricePerHourTraining)
-            </td>
-        </tr>
-        <tr>
-            <td>@Html.LabelFor(x => x.Age)</td>
-            <td>
-                @Html.EditorFor(x => x.Age)
-            </td>
-        </tr>
-        <tr>
-            <td>@Html.LabelFor(x => x.Location)</td>
-            <td>
-                @Html.EditorFor(x => x.Location)
-            </td>
-        </tr>
-    </tbody>
-</table>
+@using (Ajax.BeginForm("Update", "Profile", new AjaxOptions()
+{
+    HttpMethod = "POST",
+    AllowCache = false,
+    UpdateTargetId = "table-holder",
+    InsertionMode = InsertionMode.Replace
+}))
+{
+    @Html.AntiForgeryToken()
+    <table class="table table-hover">
+        <tbody>
+            <tr>
+                <td>@Html.LabelFor(x => x.FirstName)</td>
+                <td>
+                    @Html.EditorFor(x => x.FirstName)
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(x => x.LastName)</td>
+                <td>
+                    @Html.EditorFor(x => x.LastName)
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(x => x.Username)</td>
+                <td>
+                    @Html.EditorFor(x => x.Username)
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(x => x.PricePerHourTraining)</td>
+                <td>
+                    @Html.EditorFor(x => x.PricePerHourTraining)
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(x => x.Age)</td>
+                <td>
+                    @Html.EditorFor(x => x.Age)
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(x => x.Location)</td>
+                <td>
+                    @Html.EditorFor(x => x.Location)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="panel-footer">
+        <button>Sumbit</button> 
+    </div>
+}

@@ -16,17 +16,6 @@
             <div class="table-responsive" id="table-holder">
                 @Html.DisplayForModel(Model)
             </div>
-
-            <div class="panel-footer">
-                @Ajax.ActionLink("Edit", "Edit", new AjaxOptions()
-                   {
-                       HttpMethod = "GET",
-                       AllowCache = false,
-                       InsertionMode = InsertionMode.Replace,
-                       UpdateTargetId = "table-holder"
-                   })
-            </div>
-
         </div>
     </div>
 </div>

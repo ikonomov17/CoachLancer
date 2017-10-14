@@ -50,5 +50,10 @@ namespace CoachLancer.Services
                 .FirstOrDefault();
         }
 
+        //public void UpdateCoach(CoachModel model)
+        //{
+        //    this.coachesRepository.Update(model);
+        //    this.context.Commit();
+        //}
     }
 }

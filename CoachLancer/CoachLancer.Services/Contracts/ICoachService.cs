@@ -10,5 +10,7 @@ namespace CoachLancer.Services
         IEnumerable<CoachModel> GetLastRegisteredCoaches(int count);
 
         CoachModel GetCoachByUsername(string username);
+
+        //void UpdateCoach(CoachModel model);
     }
 }

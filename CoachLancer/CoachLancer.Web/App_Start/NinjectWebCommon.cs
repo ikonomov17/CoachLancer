@@ -22,6 +22,7 @@ namespace CoachLancer.Web.App_Start
     using CoachLancer.Services;
     using CoachLancer.Data.SaveContext;
     using Microsoft.AspNet.Identity.Owin;
+    using AutoMapper;
 
     public static class NinjectWebCommon
     {
@@ -97,6 +98,7 @@ namespace CoachLancer.Web.App_Start
 
             kernel.Bind<ICoachService>().To<CoachService>();
             kernel.Bind<ISaveContext>().To<SaveContext>();
+            kernel.Bind<IMapper>().ToMethod(m => Mapper.Instance);
         }
     }
 }
