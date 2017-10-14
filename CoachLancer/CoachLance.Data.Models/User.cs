@@ -32,11 +32,9 @@ namespace CoachLance.Data.Models
 
         public string LastName { get; set; }
 
-        public virtual Gender Gender { get; set; }
+        //public virtual GenderEnum GenderId { get; set; }
 
         public string Location { get; set; }
-
-        public ICollection<string> Languages { get; set; }
 
         public string Nationality { get; set; }
 

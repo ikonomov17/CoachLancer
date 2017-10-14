@@ -308,6 +308,9 @@
     <Content Include="Areas\Player\Views\Dashboard\Index.cshtml" />
     <Content Include="Areas\Player\Views\Shared\_PlayerLayout.cshtml" />
     <Content Include="Areas\Coach\Views\Profile\Index.cshtml" />
+    <Content Include="Areas\Coach\Views\Shared\DisplayTemplates\ProfileViewModel.cshtml" />
+    <Content Include="Areas\Coach\Views\Profile\Edit.cshtml" />
+    <Content Include="Areas\Coach\Views\Shared\EditorTemplates\ProfileViewModel.cshtml" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\admin.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -317,6 +320,8 @@
     <Content Include="Scripts\jquery-3.2.1.slim.js" />
     <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />

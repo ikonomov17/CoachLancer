@@ -1,4 +1,5 @@
 ﻿using CoachLance.Data.Models;
+using CoachLance.Data.Models.Enums;
 using CoachLancer.Web.Models;
 using CoachLancer.Web.ViewModels.Factories;
 using Microsoft.AspNet.Identity;
@@ -159,6 +160,7 @@ namespace CoachLancer.Web.Controllers
                 User user = this.userFactory.CreateUserByRole(model.Role);
                 user.UserName = model.Email;
                 user.Email = model.Email;
+                //user.GenderId = GenderEnum.NotSet;
 
                 var result = await this.UserManager.CreateAsync(user, model.Password);
 

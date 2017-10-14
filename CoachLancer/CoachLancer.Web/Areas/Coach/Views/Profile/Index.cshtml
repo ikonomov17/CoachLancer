@@ -3,3 +3,30 @@
     ViewBag.Title = "Profile";
     Layout = "~/Areas/Coach/Views/Shared/_CoachLayout.cshtml";
 }
+@using CoachLancer.Web.Areas.Coach.ViewModels
+@model ProfileViewModel
+
+
+<div class="row" id="profile-view">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading text-center"><h3>Profile</h3></div>
+            <!-- Table -->
+            <div class="table-responsive" id="table-holder">
+                @Html.DisplayForModel(Model)
+            </div>
+
+            <div class="panel-footer">
+                @Ajax.ActionLink("Edit", "Edit", new AjaxOptions()
+                   {
+                       HttpMethod = "GET",
+                       AllowCache = false,
+                       InsertionMode = InsertionMode.Replace,
+                       UpdateTargetId = "table-holder"
+                   })
+            </div>
+
+        </div>
+    </div>
+</div>

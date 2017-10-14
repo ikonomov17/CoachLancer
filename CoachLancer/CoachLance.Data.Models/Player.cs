@@ -10,11 +10,9 @@ namespace CoachLance.Data.Models
 
         public double Weight { get; set; }
 
-        public Position Position { get; set; }
+        //public Position Position { get; set; }
 
         [DataType(DataType.DateTime)]
         public DateTime? StartedTraining { get; set; }
-
-        public ICollection<string> Achievements { get; set; }
     }
 }

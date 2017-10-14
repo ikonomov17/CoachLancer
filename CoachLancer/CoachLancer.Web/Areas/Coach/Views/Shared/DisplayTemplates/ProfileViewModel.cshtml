@@ -1,0 +1,71 @@
+﻿@using CoachLancer.Web.Areas.Coach.ViewModels
+@model ProfileViewModel
+
+<table class="table table-hover">
+    <tbody>
+        <tr>
+            <td>@Html.LabelFor(x => x.FirstName)</td>
+            <td>
+                @if (Model.FirstName != null)
+                {
+                    @Html.DisplayFor(x => x.FirstName)
+                }
+                else
+                {
+                    <text>No first name is entered yet...</text>
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.LastName)</td>
+            <td>
+                @if (Model.LastName != null)
+                {
+                    @Html.DisplayFor(x => x.LastName)
+                }
+                else
+                {
+                    <text>No last name is entered yet...</text>
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.Username)</td>
+            <td>
+                @if (Model.Username != null)
+                {
+                    @Html.DisplayFor(x => x.Username)
+                }
+                else
+                {
+                    <text>No username is entered yet...</text>
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.PricePerHourTraining)</td>
+            <td>
+                @Html.DisplayFor(x => x.PricePerHourTraining)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.Age)</td>
+            <td>
+                @Html.DisplayFor(x => x.Age)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.Location)</td>
+            <td>
+                @if (Model.Location != null)
+                {
+                    @Html.DisplayFor(x => x.Location)
+                }
+                else
+                {
+                    <text>No location is entered yet...</text>
+                }
+            </td>
+        </tr>
+    </tbody>
+</table>

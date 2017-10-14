@@ -39,5 +39,16 @@ namespace CoachLancer.Services
                 .Select(CoachModel.Create)
                 .ToList();
         }
+
+        public CoachModel GetCoachByUsername(string username)
+        {
+            Guard.WhenArgument(username, "username").IsNullOrEmpty().Throw();
+
+            return this.coachesRepository.All
+                .Where(c => c.UserName == username)
+                .Select(CoachModel.Create)
+                .FirstOrDefault();
+        }
+
     }
 }

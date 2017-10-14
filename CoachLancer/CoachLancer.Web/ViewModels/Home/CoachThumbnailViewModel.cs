@@ -13,7 +13,6 @@ namespace CoachLancer.Web.ViewModels.Home
         public CoachThumbnailViewModel(CoachModel coach)
         {
             this.Username = coach.Username;
-            this.UserSince = coach.UserSince;
         }
 
         public string Username { get; set; }

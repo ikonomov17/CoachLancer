@@ -8,5 +8,7 @@ namespace CoachLancer.Services
         IEnumerable<CoachModel> GetAll();
 
         IEnumerable<CoachModel> GetLastRegisteredCoaches(int count);
+
+        CoachModel GetCoachByUsername(string username);
     }
 }
