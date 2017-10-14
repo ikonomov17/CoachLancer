@@ -1,4 +1,4 @@
-﻿using CoachLance.Data.Models;
+﻿using CoachLancer.Data.Models;
 
 namespace CoachLancer.Web.ViewModels.Factories
 {

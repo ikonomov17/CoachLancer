@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace CoachLance.Data.Models
+namespace CoachLancer.Data.Models
 {
     public class Coach : User
     {

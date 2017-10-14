@@ -1,4 +1,4 @@
-﻿namespace CoachLance.Data.Models.Enums
+﻿namespace CoachLancer.Data.Models.Enums
 {
     public enum PositionEnum
     {

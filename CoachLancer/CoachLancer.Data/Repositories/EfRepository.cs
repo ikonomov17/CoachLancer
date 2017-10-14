@@ -1,4 +1,4 @@
-﻿using CoachLance.Data.Models.Contracts;
+﻿using CoachLancer.Data.Models.Contracts;
 using System;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;

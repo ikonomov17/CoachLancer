@@ -1,7 +1,7 @@
 namespace CoachLancer.Data.Migrations
 {
-    using CoachLance.Data.Models;
-    using CoachLance.Data.Models.Enums;
+    using CoachLancer.Data.Models;
+    using CoachLancer.Data.Models.Enums;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using System;

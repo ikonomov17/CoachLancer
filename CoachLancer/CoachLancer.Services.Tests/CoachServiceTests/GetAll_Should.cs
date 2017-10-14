@@ -1,7 +1,6 @@
-﻿using CoachLance.Data.Models;
+﻿using CoachLancer.Data.Models;
 using CoachLancer.Data.Repositories;
 using CoachLancer.Data.SaveContext;
-using CoachLancer.Services.Models;
 using Moq;
 using NUnit.Framework;
 using System.Collections.Generic;
@@ -42,7 +41,7 @@ namespace CoachLancer.Services.Tests.CoachServiceTests
 
             var result = coachService.GetAll();
 
-            CollectionAssert.AllItemsAreInstancesOfType(result, typeof(CoachModel));
+            CollectionAssert.AllItemsAreInstancesOfType(result, typeof(Coach));
         }
 
         [Test]

@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{B7A931C0-0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoachLancer.Data", "CoachLancer.Data\CoachLancer.Data.csproj", "{1B3E8832-04AE-4D35-86B8-F51624AE4894}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoachLance.Data.Models", "CoachLance.Data.Models\CoachLance.Data.Models.csproj", "{C5C3E4BA-283A-413D-A926-34D8CB203089}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoachLancer.Data.Models", "CoachLance.Data.Models\CoachLancer.Data.Models.csproj", "{C5C3E4BA-283A-413D-A926-34D8CB203089}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{C6C10B5F-23B3-4A61-84B6-840ADAC8A3D0}"
 EndProject

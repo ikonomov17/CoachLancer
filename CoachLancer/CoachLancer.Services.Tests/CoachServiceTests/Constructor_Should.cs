@@ -1,4 +1,4 @@
-﻿using CoachLance.Data.Models;
+﻿using CoachLancer.Data.Models;
 using CoachLancer.Data.Repositories;
 using CoachLancer.Data.SaveContext;
 using Moq;

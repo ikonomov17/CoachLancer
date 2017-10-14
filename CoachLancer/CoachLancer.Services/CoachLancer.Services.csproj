@@ -59,11 +59,10 @@
   <ItemGroup>
     <Compile Include="CoachService.cs" />
     <Compile Include="Contracts\ICoachService.cs" />
-    <Compile Include="Models\CoachModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CoachLance.Data.Models\CoachLance.Data.Models.csproj">
+    <ProjectReference Include="..\CoachLance.Data.Models\CoachLancer.Data.Models.csproj">
       <Project>{C5C3E4BA-283A-413D-A926-34D8CB203089}</Project>
       <Name>CoachLance.Data.Models</Name>
     </ProjectReference>

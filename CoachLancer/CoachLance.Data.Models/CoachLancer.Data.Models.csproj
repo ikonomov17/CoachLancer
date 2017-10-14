@@ -7,8 +7,8 @@
     <ProjectGuid>{C5C3E4BA-283A-413D-A926-34D8CB203089}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CoachLance.Data.Models</RootNamespace>
-    <AssemblyName>CoachLance.Data.Models</AssemblyName>
+    <RootNamespace>CoachLancer.Data.Models</RootNamespace>
+    <AssemblyName>CoachLancer.Data.Models</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

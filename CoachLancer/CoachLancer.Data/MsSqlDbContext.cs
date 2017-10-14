@@ -1,5 +1,5 @@
-﻿using CoachLance.Data.Models;
-using CoachLance.Data.Models.Contracts;
+﻿using CoachLancer.Data.Models;
+using CoachLancer.Data.Models.Contracts;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Data.Entity;

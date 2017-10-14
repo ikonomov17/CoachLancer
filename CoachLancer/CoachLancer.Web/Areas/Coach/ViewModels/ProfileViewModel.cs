@@ -1,11 +1,10 @@
-﻿using CoachLancer.Services.Models;
-using CoachLancer.Web.Infrastructure;
+﻿using CoachLancer.Web.Infrastructure;
 using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace CoachLancer.Web.Areas.Coach.ViewModels
 {
-    public class ProfileViewModel : IMapFrom<CoachModel>
+    public class ProfileViewModel : IMapFrom<CoachLancer.Data.Models.Coach>
     {
         [Display(Name = "First name")]
         public string FirstName { get; set; }
@@ -13,7 +12,7 @@ namespace CoachLancer.Web.Areas.Coach.ViewModels
         [Display(Name = "Last name")]
         public string LastName { get; set; }
 
-        public string Username { get; set; }
+        public string Email { get; set; }
 
         [Display(Description = "Price per hour training", Name = "Price per hour training")]
         public double PricePerHourTraining { get; set; }

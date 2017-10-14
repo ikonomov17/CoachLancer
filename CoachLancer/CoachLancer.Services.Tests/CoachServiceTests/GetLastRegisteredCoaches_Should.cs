@@ -1,7 +1,6 @@
-﻿using CoachLance.Data.Models;
+﻿using CoachLancer.Data.Models;
 using CoachLancer.Data.Repositories;
 using CoachLancer.Data.SaveContext;
-using CoachLancer.Services.Models;
 using Moq;
 using NUnit.Framework;
 using System;
@@ -60,12 +59,12 @@ namespace CoachLancer.Services.Tests.CoachServiceTests
                 new Coach(){CreatedOn = new DateTime(2011,1,1)},
             }.AsQueryable();
 
-            var orderedList = new List<CoachModel>()
+            var orderedList = new List<Coach>()
             {
-                new CoachModel(){UserSince = new DateTime(2014,1,1)},
-                new CoachModel(){UserSince = new DateTime(2012,1,1)},
-                new CoachModel(){UserSince = new DateTime(2011,1,1)},
-                new CoachModel(){UserSince = new DateTime(2010,1,1)},
+                new Coach(){CreatedOn = new DateTime(2014,1,1)},
+                new Coach(){CreatedOn = new DateTime(2012,1,1)},
+                new Coach(){CreatedOn = new DateTime(2011,1,1)},
+                new Coach(){CreatedOn = new DateTime(2010,1,1)},
             };
 
             efRepoMock.Setup(e => e.All).Returns(unorderedList);
@@ -80,7 +79,7 @@ namespace CoachLancer.Services.Tests.CoachServiceTests
             int index = 0;
             foreach (var coachModel in result)
             {
-                Assert.AreEqual(orderedList[index].UserSince, coachModel.UserSince);
+                Assert.AreEqual(orderedList[index].CreatedOn, coachModel.CreatedOn);
                 index++;
             }
         }

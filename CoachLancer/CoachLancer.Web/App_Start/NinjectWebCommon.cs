@@ -17,7 +17,7 @@ namespace CoachLancer.Web.App_Start
     using Microsoft.AspNet.Identity.EntityFramework;
     using Microsoft.AspNet.Identity;
     using CoachLancer.Web.ViewModels.Factories;
-    using CoachLance.Data.Models;
+    using CoachLancer.Data.Models;
     using Microsoft.Owin.Security;
     using CoachLancer.Services;
     using CoachLancer.Data.SaveContext;
@@ -98,7 +98,7 @@ namespace CoachLancer.Web.App_Start
 
             kernel.Bind<ICoachService>().To<CoachService>();
             kernel.Bind<ISaveContext>().To<SaveContext>();
-            kernel.Bind<IMapper>().ToMethod(m => Mapper.Instance);
+            kernel.Bind<IMapper>().ToMethod(m => Mapper.Instance).InSingletonScope();
         }
     }
 }

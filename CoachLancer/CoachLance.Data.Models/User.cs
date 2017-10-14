@@ -1,4 +1,4 @@
-﻿using CoachLance.Data.Models.Contracts;
+﻿using CoachLancer.Data.Models.Contracts;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Security.Claims;
@@ -7,9 +7,9 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Collections.Generic;
-using CoachLance.Data.Models.Enums;
+using CoachLancer.Data.Models.Enums;
 
-namespace CoachLance.Data.Models
+namespace CoachLancer.Data.Models
 {
     public class User : IdentityUser, IDeletable, IAuditable
     {

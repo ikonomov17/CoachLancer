@@ -1,4 +1,4 @@
-﻿using CoachLance.Data.Models;
+﻿using CoachLancer.Data.Models;
 using CoachLancer.Data;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;

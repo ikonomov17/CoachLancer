@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CoachLance.Data.Models
+namespace CoachLancer.Data.Models
 {
     public class Teams
     {

@@ -1,4 +1,4 @@
-﻿using CoachLance.Data.Models.Contracts;
+﻿using CoachLancer.Data.Models.Contracts;
 using System.Linq;
 
 namespace CoachLancer.Data.Repositories

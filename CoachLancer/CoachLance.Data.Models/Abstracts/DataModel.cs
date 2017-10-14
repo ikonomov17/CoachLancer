@@ -1,9 +1,9 @@
-﻿using CoachLance.Data.Models.Contracts;
+﻿using CoachLancer.Data.Models.Contracts;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CoachLance.Data.Models.Abstracts
+namespace CoachLancer.Data.Models.Abstracts
 {
     public abstract class DataModel : IDeletable, IAuditable
     {

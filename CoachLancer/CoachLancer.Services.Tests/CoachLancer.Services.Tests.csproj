@@ -77,9 +77,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CoachLance.Data.Models\CoachLance.Data.Models.csproj">
+    <ProjectReference Include="..\CoachLance.Data.Models\CoachLancer.Data.Models.csproj">
       <Project>{C5C3E4BA-283A-413D-A926-34D8CB203089}</Project>
-      <Name>CoachLance.Data.Models</Name>
+      <Name>CoachLancer.Data.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\CoachLancer.Data\CoachLancer.Data.csproj">
       <Project>{1B3E8832-04AE-4D35-86B8-F51624AE4894}</Project>

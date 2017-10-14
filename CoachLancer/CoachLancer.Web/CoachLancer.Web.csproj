@@ -317,6 +317,7 @@
     <Content Include="Areas\Coach\Views\Shared\DisplayTemplates\ProfileViewModel.cshtml" />
     <Content Include="Areas\Coach\Views\Profile\Edit.cshtml" />
     <Content Include="Areas\Coach\Views\Shared\EditorTemplates\ProfileViewModel.cshtml" />
+    <Content Include="Areas\Coach\Views\Shared\_ProfilePartial.cshtml" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\admin.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -389,9 +390,9 @@
     <Content Include="Scripts\jquery-3.2.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CoachLance.Data.Models\CoachLance.Data.Models.csproj">
+    <ProjectReference Include="..\CoachLance.Data.Models\CoachLancer.Data.Models.csproj">
       <Project>{c5c3e4ba-283a-413d-a926-34d8cb203089}</Project>
-      <Name>CoachLance.Data.Models</Name>
+      <Name>CoachLancer.Data.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\CoachLancer.Data\CoachLancer.Data.csproj">
       <Project>{1B3E8832-04AE-4D35-86B8-F51624AE4894}</Project>

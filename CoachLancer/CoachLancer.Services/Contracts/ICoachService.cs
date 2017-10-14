@@ -1,16 +1,16 @@
-﻿using CoachLancer.Services.Models;
+﻿using CoachLancer.Data.Models;
 using System.Collections.Generic;
 
 namespace CoachLancer.Services
 {
     public interface ICoachService
     {
-        IEnumerable<CoachModel> GetAll();
+        IEnumerable<Coach> GetAll();
 
-        IEnumerable<CoachModel> GetLastRegisteredCoaches(int count);
+        IEnumerable<Coach> GetLastRegisteredCoaches(int count);
 
-        CoachModel GetCoachByUsername(string username);
+        Coach GetCoachByEmail(string email);
 
-        //void UpdateCoach(CoachModel model);
+        void UpdateCoach(Coach model);
     }
 }

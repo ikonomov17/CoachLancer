@@ -1,8 +1,7 @@
 ﻿using Bytes2you.Validation;
-using CoachLance.Data.Models;
+using CoachLancer.Data.Models;
 using CoachLancer.Data.Repositories;
 using CoachLancer.Data.SaveContext;
-using CoachLancer.Services.Models;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -21,39 +20,37 @@ namespace CoachLancer.Services
             this.context = context;
         }
 
-        public IEnumerable<CoachModel> GetAll()
+        public IEnumerable<Coach> GetAll()
         {
             return this.coachesRepository
                 .All
-                .Select(CoachModel.Create)
                 .ToList();
         }
 
-        public IEnumerable<CoachModel> GetLastRegisteredCoaches(int count)
+        public IEnumerable<Coach> GetLastRegisteredCoaches(int count)
         {
             Guard.WhenArgument(count, "Coaches count").IsLessThan(0).Throw();
             return this.coachesRepository
                 .All
                 .OrderByDescending(c => c.CreatedOn)
                 .Take(count)
-                .Select(CoachModel.Create)
                 .ToList();
         }
 
-        public CoachModel GetCoachByUsername(string username)
+        public Coach GetCoachByEmail(string username)
         {
             Guard.WhenArgument(username, "username").IsNullOrEmpty().Throw();
 
             return this.coachesRepository.All
                 .Where(c => c.UserName == username)
-                .Select(CoachModel.Create)
                 .FirstOrDefault();
         }
 
-        //public void UpdateCoach(CoachModel model)
-        //{
-        //    this.coachesRepository.Update(model);
-        //    this.context.Commit();
-        //}
+        public void UpdateCoach(Coach model)
+        {
+            
+            this.coachesRepository.Update(model);
+            this.context.Commit();
+        }
     }
 }

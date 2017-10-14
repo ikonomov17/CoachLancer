@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CoachLance.Data.Models.Contracts
+namespace CoachLancer.Data.Models.Contracts
 {
     public interface IAuditable
     {
