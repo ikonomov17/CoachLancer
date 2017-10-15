@@ -1,5 +1,6 @@
 ﻿using CoachLancer.Data.Models;
 using CoachLancer.Data.Models.Enums;
+using CoachLancer.Web.Extensions;
 using CoachLancer.Web.Models;
 using CoachLancer.Web.ViewModels.Factories;
 using Microsoft.AspNet.Identity;
@@ -11,6 +12,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace CoachLancer.Web.Controllers
 {
@@ -65,6 +67,24 @@ namespace CoachLancer.Web.Controllers
         {
             ViewBag.ReturnUrl = returnUrl;
             return View();
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        public JsonResult DoesUserNameExist(string UserName)
+        {
+            var user = this.UserManager.FindByUsername(UserName);
+
+            return Json(user == null);
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        public JsonResult DoesUserEmailExist(string Email)
+        {
+            var user = this.UserManager.FindByEmail(Email);
+
+            return Json(user == null);
         }
 
         //
@@ -159,6 +179,7 @@ namespace CoachLancer.Web.Controllers
             {
                 User user = this.userFactory.CreateUserByRole(model.Role);
                 user.UserName = model.Username;
+                user.Email = model.Email;
 
                 var result = await this.UserManager.CreateAsync(user, model.Password);
 
