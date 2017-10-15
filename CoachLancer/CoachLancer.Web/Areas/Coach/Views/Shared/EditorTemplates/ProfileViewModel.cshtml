@@ -15,7 +15,13 @@
             <tr>
                 <td>@Html.LabelFor(x => x.FirstName)</td>
                 <td>
+                    @Html.ValidationMessageFor(x => x.FirstName, "", new { @class = "text-danger" })
                     @Html.EditorFor(x => x.FirstName)
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    @Html.ValidationMessageFor(x => x.LastName, "", new { @class = "text-danger" })
                 </td>
             </tr>
             <tr>
@@ -25,9 +31,19 @@
                 </td>
             </tr>
             <tr>
+                <td colspan="2">
+                    @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
                 <td>@Html.LabelFor(x => x.Email)</td>
                 <td>
                     @Html.EditorFor(x => x.Email)
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    @Html.ValidationMessageFor(x => x.PricePerHourTraining, "", new { @class = "text-danger" })
                 </td>
             </tr>
             <tr>
@@ -48,9 +64,42 @@
                     @Html.EditorFor(x => x.Location)
                 </td>
             </tr>
+            <tr>
+                <td colspan="2">
+                    @Html.ValidationMessageFor(x => x.DateOfBirth, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(x => x.DateOfBirth)</td>
+                <td>
+                    @Html.TextBoxFor(x => x.DateOfBirth, "{0:MM/dd/yyyy}", new { id = "datepicker" })
+                </td>
+            </tr>
         </tbody>
     </table>
     <div class="panel-footer">
-        <button>Sumbit</button> 
+        <button>Sumbit</button>
     </div>
 }
+
+
+@Scripts.Render("~/bundles/jqueryval")
+
+
+<script>
+    $(document).ready(function () {
+
+        $('#datepicker').datepicker({
+            dateFormat: "dd-mm-yy",
+            showOtherMonths: true,
+            selectOtherMonths: true,
+            changeMonth: true,
+            changeYear: true,
+            minDate: new Date(1900, 1, 1),
+            maxDate: "0D",
+            yearRange: "1900:" + new Date().getFullYear(),
+            defaultDate: 0
+        });
+
+    });
+</script>

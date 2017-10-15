@@ -35,11 +35,16 @@ namespace CoachLancer.Web
             bundles.Add(new StyleBundle("~/Content/css/admin").Include(
                 "~/Content/bootstrap.css",
                 "~/Content/admin.css",
-                "~/Content/metisMenu.css"));
+                "~/Content/metisMenu.css",
+                "~/Content/themes/base/all.css",
+                "~/Content/themes/base/datepicker.css"
+                ));
 
             bundles.Add(new ScriptBundle("~/bundles/admin").Include(
                 "~/Scripts/admin.js",
-                "~/Scripts/metisMenu.js"));
+                "~/Scripts/metisMenu.js",
+                "~/Scripts/jquery-ui-{version}.js",
+                "~/Scripts/DataTables/jquery.dataTables.js"));
         }
     }
 }

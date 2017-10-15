@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CoachLancer.Data.SaveContext;
 using CoachLancer.Services.Contracts;
 using CoachLancer.Web.Areas.Coach.ViewModels;
 using System.Web.Mvc;
@@ -9,10 +10,12 @@ namespace CoachLancer.Web.Areas.Coach.Controllers
     {
         private readonly ICoachService coachService;
         private readonly IMapper mapper;
+        private readonly ISaveContext saveContext;
 
-        public ProfileController(ICoachService coachService, IMapper mapper)
+        public ProfileController(ICoachService coachService, ISaveContext saveContext,IMapper mapper)
         {
             this.coachService = coachService;
+            this.saveContext = saveContext;
             this.mapper = mapper;
         }
 
@@ -41,8 +44,9 @@ namespace CoachLancer.Web.Areas.Coach.Controllers
             coach.Email = model.Email;
             coach.PricePerHourTraining = model.PricePerHourTraining;
             coach.Location = model.Location;
-
+            coach.DateOfBirth = model.DateOfBirth;
             this.coachService.UpdateCoach(coach);
+            this.saveContext.Commit();
 
             return PartialView("_ProfilePartial", this.mapper.Map<ProfileViewModel>(coach));
         }
