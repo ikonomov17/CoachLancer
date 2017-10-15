@@ -27,12 +27,17 @@ namespace CoachLancer.Services
             return this.groupsRepository
                 .All
                 .ToList();
-
         }
 
         public IEnumerable<Groups> GetLatestCreatedGroups(int count)
         {
-            return this.groupsRepository.All.OrderByDescending(g => g.CreatedOn).Take(count).ToList();
+            Guard.WhenArgument(count, "count").IsLessThan(0).Throw();
+
+            return this.groupsRepository
+                .All
+                .OrderByDescending(g => g.CreatedOn)
+                .Take(count)
+                .ToList();
         }
 
         public void CreateGroup(Groups model)

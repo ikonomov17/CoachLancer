@@ -71,6 +71,10 @@
     <Compile Include="CoachServiceTests\GetAll_Should.cs" />
     <Compile Include="CoachServiceTests\GetCoachByUsername_Should.cs" />
     <Compile Include="CoachServiceTests\GetLastRegisteredCoaches_Should.cs" />
+    <Compile Include="GroupServiceTests\Constructor_Should.cs" />
+    <Compile Include="GroupServiceTests\CreateGroup_Should.cs" />
+    <Compile Include="GroupServiceTests\GetAll_Should.cs" />
+    <Compile Include="GroupServiceTests\GetLatestCreatedGroups_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

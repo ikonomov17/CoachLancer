@@ -19,7 +19,6 @@ namespace CoachLancer.Services.Tests.CoachServiceTests
             // Arrange
             var contextMock = new Mock<ISaveContext>();
             var efRepoMock = new Mock<IEfRepository<Coach>>();
-            var emptyList = new List<Coach>().AsQueryable();
 
             var coachService = new CoachService(efRepoMock.Object, contextMock.Object);
 
