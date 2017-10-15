@@ -9,7 +9,7 @@ namespace CoachLancer.Services
 
         IEnumerable<Coach> GetLastRegisteredCoaches(int count);
 
-        Coach GetCoachByUsername(string email);
+        Coach GetCoachByUsername(string username);
 
         void UpdateCoach(Coach model);
     }

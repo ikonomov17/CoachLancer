@@ -63,7 +63,7 @@
     <Compile Include="Gender.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Position.cs" />
-    <Compile Include="Teams.cs" />
+    <Compile Include="Groups.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

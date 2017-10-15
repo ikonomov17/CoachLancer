@@ -19,6 +19,8 @@ namespace CoachLancer.Data
 
         public IDbSet<Coach> Coaches { get; set; }
 
+        public IDbSet<Groups> Groups { get; set; }
+
         public IDbSet<Gender> Genders { get; set; }
 
         public IDbSet<Position> Positions { get; set; }

@@ -235,7 +235,9 @@
     <Compile Include="Areas\Coach\CoachAreaRegistration.cs" />
     <Compile Include="Areas\Coach\Controllers\CoachController.cs" />
     <Compile Include="Areas\Coach\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Coach\Controllers\GroupsController.cs" />
     <Compile Include="Areas\Coach\Controllers\ProfileController.cs" />
+    <Compile Include="Areas\Coach\ViewModels\GroupsViewModel.cs" />
     <Compile Include="Areas\Coach\ViewModels\ProfileViewModel.cs" />
     <Compile Include="Areas\Player\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Player\Controllers\PlayerController.cs" />
@@ -319,6 +321,7 @@
     <Content Include="Areas\Coach\Views\Profile\Edit.cshtml" />
     <Content Include="Areas\Coach\Views\Shared\EditorTemplates\ProfileViewModel.cshtml" />
     <Content Include="Areas\Coach\Views\Shared\_ProfilePartial.cshtml" />
+    <Content Include="Areas\Coach\Views\Groups\Index.cshtml" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\admin.js" />
     <Content Include="Scripts\bootstrap.js" />
