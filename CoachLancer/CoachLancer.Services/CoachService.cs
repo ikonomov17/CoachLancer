@@ -2,6 +2,7 @@
 using CoachLancer.Data.Models;
 using CoachLancer.Data.Repositories;
 using CoachLancer.Data.SaveContext;
+using CoachLancer.Services.Contracts;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -53,6 +54,14 @@ namespace CoachLancer.Services
             Guard.WhenArgument(model, "coach model").IsNull().Throw();
 
             this.coachesRepository.Update(model);
+            this.context.Commit();
+        }
+
+        public void AddGroupToCoach(string username, Groups group)
+        {
+            var coach = this.coachesRepository.All.Where(c => c.UserName == username).FirstOrDefault();
+            coach.Groups.Add(group);
+            this.coachesRepository.Update(coach);
             this.context.Commit();
         }
     }

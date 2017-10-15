@@ -8,6 +8,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Ninject;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
@@ -180,6 +181,7 @@ namespace CoachLancer.Web.Controllers
                 User user = this.userFactory.CreateUserByRole(model.Role);
                 user.UserName = model.Username;
                 user.Email = model.Email;
+                user.CreatedOn = DateTime.Now;
 
                 var result = await this.UserManager.CreateAsync(user, model.Password);
 

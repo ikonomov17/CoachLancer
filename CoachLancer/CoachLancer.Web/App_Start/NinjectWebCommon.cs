@@ -23,6 +23,7 @@ namespace CoachLancer.Web.App_Start
     using CoachLancer.Data.SaveContext;
     using Microsoft.AspNet.Identity.Owin;
     using AutoMapper;
+    using CoachLancer.Services.Contracts;
 
     public static class NinjectWebCommon
     {
@@ -82,6 +83,7 @@ namespace CoachLancer.Web.App_Start
             });
             kernel.Bind(typeof(DbContext), typeof(MsSqlDbContext)).To(typeof(MsSqlDbContext)).InRequestScope();
             kernel.Bind(typeof(IEfRepository<>)).To(typeof(EfRepository<>));
+            kernel.Bind<ISaveContext>().To<SaveContext>();
 
             // Account controller constructor
             kernel.Bind<ApplicationSignInManager>().ToMethod(_ =>
@@ -97,7 +99,8 @@ namespace CoachLancer.Web.App_Start
             kernel.Bind<IUserFactory>().To<UserFactory>().InSingletonScope();
 
             kernel.Bind<ICoachService>().To<CoachService>();
-            kernel.Bind<ISaveContext>().To<SaveContext>();
+            kernel.Bind<IGroupsService>().To<GroupsService>();
+
             kernel.Bind<IMapper>().ToMethod(m => Mapper.Instance).InSingletonScope();
         }
     }

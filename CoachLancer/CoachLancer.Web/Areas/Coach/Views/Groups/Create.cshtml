@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Create group";
+    Layout = "~/Areas/Coach/Views/Shared/_CoachLayout.cshtml";
+}
+@using CoachLancer.Data.Models
+@model  Groups
+
+<div class="row" id="profile-view">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading text-center">
+                <h3>Profile</h3>
+            </div>
+            <!-- Table -->
+            <div class="table-responsive" id="table-holder">
+                @using (Html.BeginForm("Create", "Groups", FormMethod.Post))
+                {
+
+                    @Html.AntiForgeryToken()
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr>
+                                <td>@Html.LabelFor(x => x.Name)</td>
+                                <td>
+                                    @Html.EditorFor(x => x.Name)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>@Html.LabelFor(x => x.TrainingsPerWeek)</td>
+                                <td>
+                                    @Html.EditorFor(x => x.TrainingsPerWeek)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="text-center">
+                                    <button>Submit</button>
+                                </td>
+                            </tr>
+                    </table>
+                }
+            </div>
+        </div>
+    </div>
+</div>

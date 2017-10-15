@@ -41,9 +41,10 @@
                         </li>
                         @*Dropdown menu for all coach groups*@
                         <li>
-                            <a @Url.Action("Index", "Groups")><i class="fa fa-bar-chart-o fa-fw"></i> Manage Groups<span class="fa arrow"></span></a>
+                            <a href=""><i class="fa fa-bar-chart-o fa-fw"></i>Groups<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li>Group1</li>
+                                <li>@Html.ActionLink("Manage Groups", "Index", "Groups")</li>
+                                <li>@Html.ActionLink("Create Group", "Create", "Groups")</li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>

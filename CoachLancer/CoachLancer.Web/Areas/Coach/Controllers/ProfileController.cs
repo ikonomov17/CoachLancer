@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using CoachLancer.Services;
+using CoachLancer.Services.Contracts;
 using CoachLancer.Web.Areas.Coach.ViewModels;
 using System.Web.Mvc;
 

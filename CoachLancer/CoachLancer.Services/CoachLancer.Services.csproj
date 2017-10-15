@@ -59,6 +59,8 @@
   <ItemGroup>
     <Compile Include="CoachService.cs" />
     <Compile Include="Contracts\ICoachService.cs" />
+    <Compile Include="Contracts\IGroupsService.cs" />
+    <Compile Include="GroupsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,7 +1,7 @@
 ﻿using CoachLancer.Data.Models;
 using System.Collections.Generic;
 
-namespace CoachLancer.Services
+namespace CoachLancer.Services.Contracts
 {
     public interface ICoachService
     {
@@ -12,5 +12,7 @@ namespace CoachLancer.Services
         Coach GetCoachByUsername(string username);
 
         void UpdateCoach(Coach model);
+
+        void AddGroupToCoach(string username, Groups group);
     }
 }

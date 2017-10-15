@@ -289,6 +289,8 @@
     <Content Include="Content\Images\me.jpg" />
     <Content Include="Content\Images\night_stadium.jpg" />
     <Content Include="Content\Images\statistics.jpg" />
+    <Content Include="Content\metisMenu.css" />
+    <Content Include="Content\metisMenu.min.css" />
     <Content Include="Content\register_form.css" />
     <Content Include="Content\styles.css" />
     <Content Include="favicon.ico" />
@@ -322,6 +324,7 @@
     <Content Include="Areas\Coach\Views\Shared\EditorTemplates\ProfileViewModel.cshtml" />
     <Content Include="Areas\Coach\Views\Shared\_ProfilePartial.cshtml" />
     <Content Include="Areas\Coach\Views\Groups\Index.cshtml" />
+    <Content Include="Areas\Coach\Views\Groups\Create.cshtml" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\admin.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -337,6 +340,8 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\metisMenu.js" />
+    <Content Include="Scripts\metisMenu.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />

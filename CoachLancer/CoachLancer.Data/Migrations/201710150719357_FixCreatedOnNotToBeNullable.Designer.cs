@@ -7,13 +7,13 @@ namespace CoachLancer.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class AddedGroups : IMigrationMetadata
+    public sealed partial class FixCreatedOnNotToBeNullable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedGroups));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(FixCreatedOnNotToBeNullable));
         
         string IMigrationMetadata.Id
         {
-            get { return "201710150502016_AddedGroups"; }
+            get { return "201710150719357_FixCreatedOnNotToBeNullable"; }
         }
         
         string IMigrationMetadata.Source

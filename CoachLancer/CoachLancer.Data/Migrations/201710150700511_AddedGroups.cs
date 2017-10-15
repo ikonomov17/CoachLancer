@@ -14,10 +14,16 @@ namespace CoachLancer.Data.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
                         TrainingsPerWeek = c.Int(nullable: false),
+                        IsDeleted = c.Boolean(nullable: false),
+                        DeletedOn = c.DateTime(),
+                        CreatedOn = c.DateTime(),
+                        ModifiedOn = c.DateTime(),
+                        DateOfBirth = c.DateTime(),
                         Coach_Id = c.String(maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.AspNetUsers", t => t.Coach_Id)
+                .Index(t => t.IsDeleted)
                 .Index(t => t.Coach_Id);
             
             CreateTable(
@@ -43,6 +49,7 @@ namespace CoachLancer.Data.Migrations
             DropIndex("dbo.PlayerGroups", new[] { "Groups_Id" });
             DropIndex("dbo.PlayerGroups", new[] { "Player_Id" });
             DropIndex("dbo.Groups", new[] { "Coach_Id" });
+            DropIndex("dbo.Groups", new[] { "IsDeleted" });
             DropTable("dbo.PlayerGroups");
             DropTable("dbo.Groups");
         }

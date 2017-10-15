@@ -78,9 +78,13 @@
     <Compile Include="Migrations\201710131913288_RemovedICollectionOfStringsForSimplicity.Designer.cs">
       <DependentUpon>201710131913288_RemovedICollectionOfStringsForSimplicity.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710150502016_AddedGroups.cs" />
-    <Compile Include="Migrations\201710150502016_AddedGroups.Designer.cs">
-      <DependentUpon>201710150502016_AddedGroups.cs</DependentUpon>
+    <Compile Include="Migrations\201710150700511_AddedGroups.cs" />
+    <Compile Include="Migrations\201710150700511_AddedGroups.Designer.cs">
+      <DependentUpon>201710150700511_AddedGroups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710150719357_FixCreatedOnNotToBeNullable.cs" />
+    <Compile Include="Migrations\201710150719357_FixCreatedOnNotToBeNullable.Designer.cs">
+      <DependentUpon>201710150719357_FixCreatedOnNotToBeNullable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MsSqlDbContext.cs" />
@@ -119,8 +123,11 @@
     <EmbeddedResource Include="Migrations\201710131913288_RemovedICollectionOfStringsForSimplicity.resx">
       <DependentUpon>201710131913288_RemovedICollectionOfStringsForSimplicity.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710150502016_AddedGroups.resx">
-      <DependentUpon>201710150502016_AddedGroups.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710150700511_AddedGroups.resx">
+      <DependentUpon>201710150700511_AddedGroups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710150719357_FixCreatedOnNotToBeNullable.resx">
+      <DependentUpon>201710150719357_FixCreatedOnNotToBeNullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
