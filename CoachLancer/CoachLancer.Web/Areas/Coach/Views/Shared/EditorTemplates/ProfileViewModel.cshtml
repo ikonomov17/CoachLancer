@@ -13,9 +13,13 @@
     <table class="table table-hover">
         <tbody>
             <tr>
+                <td colspan="2">
+                    @Html.ValidationMessageFor(x => x.FirstName, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
                 <td>@Html.LabelFor(x => x.FirstName)</td>
                 <td>
-                    @Html.ValidationMessageFor(x => x.FirstName, "", new { @class = "text-danger" })
                     @Html.EditorFor(x => x.FirstName)
                 </td>
             </tr>

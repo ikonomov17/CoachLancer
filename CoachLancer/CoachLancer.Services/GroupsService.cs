@@ -47,5 +47,12 @@ namespace CoachLancer.Services
             this.groupsRepository.Add(model);
             this.context.Commit();
         }
+
+        public Groups GetGroupById(int id)
+        {
+            Guard.WhenArgument(id, "id").IsLessThanOrEqual(0).Throw();
+
+            return this.groupsRepository.All.FirstOrDefault(g => g.Id == id);
+        }
     }
 }

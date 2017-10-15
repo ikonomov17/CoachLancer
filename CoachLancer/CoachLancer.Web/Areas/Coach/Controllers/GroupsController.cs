@@ -2,6 +2,7 @@
 using CoachLancer.Data.Models;
 using CoachLancer.Services.Contracts;
 using CoachLancer.Web.Areas.Coach.ViewModels;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace CoachLancer.Web.Areas.Coach.Controllers
@@ -27,8 +28,8 @@ namespace CoachLancer.Web.Areas.Coach.Controllers
         public ActionResult Index()
         {
             var coach = this.coachService.GetCoachByUsername(this.User.Identity.Name);
-
-            return View(coach.Groups);
+            var groups = coach.Groups.Select(g => this.mapper.Map<GroupViewModel>(g)).ToList();
+            return View(groups);
         }
 
         [HttpGet]
@@ -44,6 +45,20 @@ namespace CoachLancer.Web.Areas.Coach.Controllers
             this.groupsService.CreateGroup(model);
             this.coachService.AddGroupToCoach(this.User.Identity.Name, model);
             return RedirectToAction("Index");
+        }
+
+        public ActionResult Details(int id)
+        {
+            if (this.coachService.GroupBelongsToCoach(this.User.Identity.Name, id))
+            {
+                var groupDetails = this.groupsService.GetGroupById(id);
+                var mappedGroup = this.mapper.Map<GroupViewModel>(groupDetails);
+                return this.View(mappedGroup);
+            }
+            else
+            {
+                return HttpNotFound();
+            }
         }
     }
 }

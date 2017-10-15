@@ -238,7 +238,7 @@
     <Compile Include="Areas\Coach\Controllers\GroupsController.cs" />
     <Compile Include="Areas\Coach\Controllers\ProfileController.cs" />
     <Compile Include="Areas\Coach\ViewModels\CreateGroupViewModel.cs" />
-    <Compile Include="Areas\Coach\ViewModels\GroupsViewModel.cs" />
+    <Compile Include="Areas\Coach\ViewModels\GroupViewModel.cs" />
     <Compile Include="Areas\Coach\ViewModels\ProfileViewModel.cs" />
     <Compile Include="Areas\Player\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Player\Controllers\PlayerController.cs" />
@@ -530,6 +530,7 @@
     <Content Include="Content\DataTables\css\common.scss" />
     <Content Include="Areas\Coach\Views\Shared\DisplayTemplates\DateTime.cshtml" />
     <Content Include="Areas\Coach\Views\Shared\EditorTemplates\DateTime.cshtml" />
+    <Content Include="Areas\Coach\Views\Groups\Details.cshtml" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\admin.js" />
     <Content Include="Scripts\bootstrap.js" />

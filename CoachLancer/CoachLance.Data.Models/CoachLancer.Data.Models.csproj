@@ -61,9 +61,9 @@
     <Compile Include="Enums\GenderEnum.cs" />
     <Compile Include="Enums\PositionEnum.cs" />
     <Compile Include="Gender.cs" />
+    <Compile Include="Groups.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Position.cs" />
-    <Compile Include="Groups.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

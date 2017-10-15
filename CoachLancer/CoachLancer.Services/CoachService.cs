@@ -64,5 +64,17 @@ namespace CoachLancer.Services
             this.coachesRepository.Update(coach);
             this.context.Commit();
         }
+
+        public bool GroupBelongsToCoach(string username, int groupId)
+        {
+            Guard.WhenArgument(username, "username").IsNullOrEmpty().Throw();
+            Guard.WhenArgument(groupId, "group Id").IsLessThanOrEqual(0).Throw();
+
+            return this.coachesRepository
+                .All
+                .FirstOrDefault(x => x.UserName == username)
+                .Groups
+                .FirstOrDefault(x => x.Id == groupId) != null;
+        }
     }
 }

@@ -14,5 +14,7 @@ namespace CoachLancer.Services.Contracts
         void UpdateCoach(Coach model);
 
         void AddGroupToCoach(string username, Groups group);
+
+        bool GroupBelongsToCoach(string username, int groupId);
     }
 }

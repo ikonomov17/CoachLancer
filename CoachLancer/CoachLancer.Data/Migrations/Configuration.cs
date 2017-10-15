@@ -44,7 +44,12 @@ namespace CoachLancer.Data.Migrations
 
                 var userStore = new UserStore<User>(context);
                 var userManager = new UserManager<User>(userStore);
-                var user = new User { UserName = AdministratorUserName, Email = AdministratorUserName, EmailConfirmed = true };
+                var user = new User {
+                    UserName = AdministratorUserName,
+                    Email = AdministratorUserName,
+                    EmailConfirmed = true ,
+                    CreatedOn = DateTime.Now
+                };
                 userManager.Create(user, AdministratorPassword);
 
                 userManager.AddToRole(user.Id, "Admin");
