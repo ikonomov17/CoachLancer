@@ -34,6 +34,18 @@ namespace CoachLancer.Services
             return this.playersRepository.All.FirstOrDefault(p => p.UserName == username);
         }
 
+        public bool PlayerBelongsToGroup(string name, int id)
+        {
+            Guard.WhenArgument(name, "username").IsNullOrEmpty().Throw();
+            Guard.WhenArgument(id, "group id").IsLessThanOrEqual(0).Throw();
+
+            return this.playersRepository
+                .All
+                .FirstOrDefault(p => p.UserName == name)
+                .Groups
+                .FirstOrDefault(g => g.Id == id) != null;
+        }
+
         public void UpdatePlayer(Player player)
         {
             Guard.WhenArgument(player, "player").IsNull().Throw();

@@ -10,5 +10,6 @@ namespace CoachLancer.Services.Contracts
         Player GetPlayerByUsername(string username);
 
         void UpdatePlayer(Player player);
+        bool PlayerBelongsToGroup(string name, int id);
     }
 }

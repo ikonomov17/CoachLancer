@@ -1,0 +1,93 @@
+﻿@using CoachLancer.Web.Areas.Player.ViewModels
+@model PlayerProfileViewModel
+
+<table class="table table-hover">
+    <tbody>
+    <tr>
+        <td>@Html.LabelFor(x => x.FirstName)</td>
+        <td>
+            @if (Model.FirstName != null)
+            {
+                @Html.DisplayFor(x => x.FirstName)
+            }
+            else
+            {
+                <text>No first name is entered yet...</text>
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(x => x.LastName)</td>
+        <td>
+            @if (Model.LastName != null)
+            {
+                @Html.DisplayFor(x => x.LastName)
+            }
+            else
+            {
+                <text>No last name is entered yet...</text>
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(x => x.Email)</td>
+        <td>
+            @if (Model.Email != null)
+            {
+                @Html.DisplayFor(x => x.Email)
+            }
+            else
+            {
+                <text>No username is entered yet...</text>
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(x => x.Height)</td>
+        <td>
+            @Html.DisplayFor(x => x.Height)
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(x => x.Weight)</td>
+        <td>
+            @Html.DisplayFor(x => x.Weight)
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(x => x.Location)</td>
+        <td>
+            @if (Model.Location != null)
+            {
+                @Html.DisplayFor(x => x.Location)
+            }
+            else
+            {
+                <text>No location is entered yet...</text>
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(x => x.DateOfBirth)</td>
+        <td>
+            @if (Model.DateOfBirth != null)
+            {
+                @Html.DisplayFor(x => x.DateOfBirth)
+            }
+            else
+            {
+                <text>No birthday date is entered yet...</text>
+            }
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div class="panel-footer">
+    @Ajax.ActionLink("Edit", "Edit", new AjaxOptions()
+    {
+        HttpMethod = "GET",
+        AllowCache = false,
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "table-holder"
+    })
+</div>

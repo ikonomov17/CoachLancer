@@ -1,0 +1,17 @@
+﻿
+@using CoachLancer.Web.Areas.Player.ViewModels
+@model IEnumerable<PlayerViewModel>
+
+@foreach (var p in Model)
+{
+    <tr>
+        <td>@p.Username</td>
+        <td>@p.FirstName @p.LastName</td>
+        <td>@p.Height</td>
+        <td>@p.Weight</td>
+        <td>@p.DateOfBirth</td>
+    </tr>
+}
+
+
+

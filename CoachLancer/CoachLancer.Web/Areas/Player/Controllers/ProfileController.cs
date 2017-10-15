@@ -23,7 +23,7 @@ namespace CoachLancer.Web.Areas.Player.Controllers
         public ActionResult Index()
         {
             var player = this.playerService.GetPlayerByUsername(this.User.Identity.Name);
-            var viewModel = this.mapper.Map<ProfileViewModel>(player);
+            var viewModel = this.mapper.Map<PlayerProfileViewModel>(player);
             return View(viewModel);
         }
 
@@ -31,24 +31,26 @@ namespace CoachLancer.Web.Areas.Player.Controllers
         public ActionResult Edit()
         {
             var player = this.playerService.GetPlayerByUsername(this.User.Identity.Name);
-            var viewModel = this.mapper.Map<ProfileViewModel>(player);
+            var viewModel = this.mapper.Map<PlayerProfileViewModel>(player);
             return PartialView(viewModel);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Update(ProfileViewModel model)
+        public JavaScriptResult Update(PlayerProfileViewModel model)
         {
             var player = this.playerService.GetPlayerByUsername(this.User.Identity.Name);
             player.FirstName = model.FirstName;
             player.LastName = model.LastName;
             player.Email = model.Email;
+            player.Height = model.Height;
+            player.Weight = model.Weight;
             player.Location = model.Location;
             player.DateOfBirth = model.DateOfBirth;
             this.playerService.UpdatePlayer(player);
             this.saveContext.Commit();
 
-            return PartialView("_ProfilePartial", this.mapper.Map<ProfileViewModel>(player));
+            return JavaScript("location.reload(true)");
         }
     }
 }

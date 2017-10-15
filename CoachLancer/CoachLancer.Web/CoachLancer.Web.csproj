@@ -240,11 +240,13 @@
     <Compile Include="Areas\Coach\ViewModels\GroupViewModel.cs" />
     <Compile Include="Areas\Coach\ViewModels\PlayerViewModel.cs" />
     <Compile Include="Areas\Coach\ViewModels\ProfileViewModel.cs" />
-    <Compile Include="Areas\Player\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Player\Controllers\GroupsController.cs" />
     <Compile Include="Areas\Player\Controllers\PlayerController.cs" />
     <Compile Include="Areas\Player\Controllers\ProfileController.cs" />
     <Compile Include="Areas\Player\PlayerAreaRegistration.cs" />
-    <Compile Include="Areas\Player\ViewModels\ProfileViewModel.cs" />
+    <Compile Include="Areas\Player\ViewModels\GroupViewModel.cs" />
+    <Compile Include="Areas\Player\ViewModels\PlayerProfileViewModel.cs" />
+    <Compile Include="Areas\Player\ViewModels\PlayerViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -517,7 +519,6 @@
     <Content Include="Content\fonts\fontawesome-webfont.ttf" />
     <Content Include="Content\fonts\fontawesome-webfont.eot" />
     <Content Include="Areas\Player\Views\web.config" />
-    <Content Include="Areas\Player\Views\Dashboard\Index.cshtml" />
     <Content Include="Areas\Player\Views\Shared\_PlayerLayout.cshtml" />
     <Content Include="Areas\Coach\Views\Profile\Index.cshtml" />
     <Content Include="Areas\Coach\Views\Shared\DisplayTemplates\ProfileViewModel.cshtml" />
@@ -533,6 +534,14 @@
     <Content Include="Areas\Coach\Views\Shared\EditorTemplates\DateTime.cshtml" />
     <Content Include="Areas\Coach\Views\Groups\Details.cshtml" />
     <Content Include="Areas\Coach\Views\Shared\DisplayTemplates\PlayerViewModel.cshtml" />
+    <Content Include="Areas\Player\Views\Profile\Index.cshtml" />
+    <Content Include="Areas\Player\Views\Shared\DisplayTemplates\PlayerProfileViewModel.cshtml" />
+    <Content Include="Areas\Player\Views\Profile\Edit.cshtml" />
+    <Content Include="Areas\Player\Views\Shared\EditorTemplates\PlayerProfileViewModel.cshtml" />
+    <Content Include="Areas\Player\Views\Groups\Index.cshtml" />
+    <Content Include="Areas\Player\Views\Groups\Details.cshtml" />
+    <Content Include="Areas\Player\Views\Shared\EditorTemplates\PlayerViewModel.cshtml" />
+    <Content Include="Areas\Player\Views\Shared\DisplayTemplates\PlayerViewModel.cshtml" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\admin.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -671,7 +680,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Player\Views\Profile\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">

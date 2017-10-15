@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace CoachLancer.Web.Areas.Coach.ViewModels
+namespace CoachLancer.Web.Areas.Player.ViewModels
 {
     public class GroupViewModel : IMapFrom<Data.Models.Groups>
     {
@@ -11,6 +11,8 @@ namespace CoachLancer.Web.Areas.Coach.ViewModels
         public string Name { get; set; }
 
         public int TrainingsPerWeek { get; set; }
+
+        public Data.Models.Coach Coach { get; set; }
 
         public ICollection<PlayerViewModel> Players { get; set; }
 

@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CoachLancer.Web.Areas.Player.ViewModels
 {
-    public class ProfileViewModel : IMapFrom<CoachLancer.Data.Models.Player>
+    public class PlayerProfileViewModel : IMapFrom<CoachLancer.Data.Models.Player>
     {
         [Required]
         [StringLength(100, ErrorMessage = "First name should be between 1 and 100 symbols", MinimumLength = 1)]

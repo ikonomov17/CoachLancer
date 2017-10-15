@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Areas/Player/Views/Shared/_PlayerLayout.cshtml";
+}
+@using CoachLancer.Web.Areas.Player.ViewModels
+@model PlayerProfileViewModel
+
+
+<div class="row" id="profile-view">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading text-center"><h3>Profile</h3></div>
+            <!-- Table -->
+            <div class="table-responsive" id="table-holder">
+                @Html.DisplayForModel()
+            </div>
+        </div>
+    </div>
+</div>

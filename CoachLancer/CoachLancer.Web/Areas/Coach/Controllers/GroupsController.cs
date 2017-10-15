@@ -56,8 +56,7 @@ namespace CoachLancer.Web.Areas.Coach.Controllers
             {
                 var groupDetails = this.groupsService.GetGroupById(id);
                 var mappedGroup = this.mapper.Map<GroupViewModel>(groupDetails);
-                var viewPlayers = mappedGroup.Players.Select(p => this.mapper.Map<PlayerViewModel>(p)).ToList();
-                mappedGroup.Players = viewPlayers;
+                
                 return this.View(mappedGroup);
             }
             else
