@@ -75,6 +75,7 @@
     <Compile Include="GroupServiceTests\CreateGroup_Should.cs" />
     <Compile Include="GroupServiceTests\GetAll_Should.cs" />
     <Compile Include="GroupServiceTests\GetLatestCreatedGroups_Should.cs" />
+    <Compile Include="PlayerServiceTests\Constructor_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

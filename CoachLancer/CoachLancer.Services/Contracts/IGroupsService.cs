@@ -12,5 +12,7 @@ namespace CoachLancer.Services.Contracts
         void CreateGroup(Groups model);
 
         Groups GetGroupById(int id);
+
+        IEnumerable<Groups> GetGroupsByName(string name);
     }
 }

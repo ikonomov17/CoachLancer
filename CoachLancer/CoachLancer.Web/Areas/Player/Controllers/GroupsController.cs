@@ -57,5 +57,10 @@ namespace CoachLancer.Web.Areas.Player.Controllers
             this.playersService.UpdatePlayer(player);
             return RedirectToAction("Index");
         }
+
+        //public ActionResult Explore()
+        //{
+            
+        //}
     }
 }

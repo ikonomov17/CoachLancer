@@ -54,5 +54,10 @@ namespace CoachLancer.Services
 
             return this.groupsRepository.All.FirstOrDefault(g => g.Id == id);
         }
+
+        public IEnumerable<Groups> GetGroupsByName(string name)
+        {
+            return this.groupsRepository.All.Where(x => x.Name.Contains(name)).ToList();
+        }
     }
 }

@@ -23,7 +23,7 @@ namespace CoachLancer.Web
             // Remove WebForms view engine
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new RazorViewEngine());
-
+            DataTables.AspNet.Mvc5.Configuration.RegisterDataTables();
             var mapper = new AutoMapperConfig();
             mapper.Execute(Assembly.GetExecutingAssembly());
         }
