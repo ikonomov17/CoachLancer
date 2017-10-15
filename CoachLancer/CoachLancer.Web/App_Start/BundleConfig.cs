@@ -36,6 +36,7 @@ namespace CoachLancer.Web
                 "~/Content/bootstrap.css",
                 "~/Content/admin.css",
                 "~/Content/metisMenu.css",
+                "~/Content/jquery-ui.css",
                 "~/Content/themes/base/all.css",
                 "~/Content/themes/base/datepicker.css",
                 "~/Content/DataTables/css/dataTables.bootstrap.css",

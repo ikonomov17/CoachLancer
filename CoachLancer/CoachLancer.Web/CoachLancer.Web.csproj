@@ -234,15 +234,17 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Coach\CoachAreaRegistration.cs" />
     <Compile Include="Areas\Coach\Controllers\CoachController.cs" />
-    <Compile Include="Areas\Coach\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Coach\Controllers\GroupsController.cs" />
     <Compile Include="Areas\Coach\Controllers\ProfileController.cs" />
     <Compile Include="Areas\Coach\ViewModels\CreateGroupViewModel.cs" />
     <Compile Include="Areas\Coach\ViewModels\GroupViewModel.cs" />
+    <Compile Include="Areas\Coach\ViewModels\PlayerViewModel.cs" />
     <Compile Include="Areas\Coach\ViewModels\ProfileViewModel.cs" />
     <Compile Include="Areas\Player\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Player\Controllers\PlayerController.cs" />
+    <Compile Include="Areas\Player\Controllers\ProfileController.cs" />
     <Compile Include="Areas\Player\PlayerAreaRegistration.cs" />
+    <Compile Include="Areas\Player\ViewModels\ProfileViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -514,7 +516,6 @@
     <Content Include="Content\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\fonts\fontawesome-webfont.ttf" />
     <Content Include="Content\fonts\fontawesome-webfont.eot" />
-    <Content Include="Areas\Coach\Views\Dashboard\Index.cshtml" />
     <Content Include="Areas\Player\Views\web.config" />
     <Content Include="Areas\Player\Views\Dashboard\Index.cshtml" />
     <Content Include="Areas\Player\Views\Shared\_PlayerLayout.cshtml" />
@@ -531,6 +532,7 @@
     <Content Include="Areas\Coach\Views\Shared\DisplayTemplates\DateTime.cshtml" />
     <Content Include="Areas\Coach\Views\Shared\EditorTemplates\DateTime.cshtml" />
     <Content Include="Areas\Coach\Views\Groups\Details.cshtml" />
+    <Content Include="Areas\Coach\Views\Shared\DisplayTemplates\PlayerViewModel.cshtml" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\admin.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -669,7 +671,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Player\Models\" />
+    <Folder Include="Areas\Player\Views\Profile\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">

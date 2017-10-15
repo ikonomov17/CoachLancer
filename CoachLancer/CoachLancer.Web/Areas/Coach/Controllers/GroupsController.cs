@@ -12,15 +12,18 @@ namespace CoachLancer.Web.Areas.Coach.Controllers
         private readonly IMapper mapper;
         private readonly ICoachService coachService;
         private readonly IGroupsService groupsService;
+        private readonly IPlayersService playersService;
 
         public GroupsController(
             ICoachService coachService, 
             IGroupsService groupsService,
+            IPlayersService playersService,
             IMapper mapper
             )
         {
             this.coachService = coachService;
             this.groupsService = groupsService;
+            this.playersService = playersService;
             this.mapper = mapper;
         }
 
@@ -53,12 +56,25 @@ namespace CoachLancer.Web.Areas.Coach.Controllers
             {
                 var groupDetails = this.groupsService.GetGroupById(id);
                 var mappedGroup = this.mapper.Map<GroupViewModel>(groupDetails);
+                var viewPlayers = mappedGroup.Players.Select(p => this.mapper.Map<PlayerViewModel>(p)).ToList();
+                mappedGroup.Players = viewPlayers;
                 return this.View(mappedGroup);
             }
             else
             {
                 return HttpNotFound();
             }
+        }
+
+        [HttpPost]
+        public JavaScriptResult AddPlayer(int groupId, string playerUsername)
+        {
+            var player = this.playersService.GetPlayerByUsername(playerUsername);
+            var group = this.groupsService.GetGroupById(groupId);
+            player.Groups.Add(group);
+            this.playersService.UpdatePlayer(player);
+            
+            return JavaScript("location.reload(true)");
         }
     }
 }

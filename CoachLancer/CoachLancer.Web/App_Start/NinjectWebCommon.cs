@@ -100,6 +100,8 @@ namespace CoachLancer.Web.App_Start
 
             kernel.Bind<ICoachService>().To<CoachService>();
             kernel.Bind<IGroupsService>().To<GroupsService>();
+            kernel.Bind<IPlayersService>().To<PlayersService>();
+            
 
             kernel.Bind<IMapper>().ToMethod(m => Mapper.Instance).InSingletonScope();
         }

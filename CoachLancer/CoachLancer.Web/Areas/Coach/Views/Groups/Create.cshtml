@@ -11,7 +11,7 @@
         <div class="panel panel-default">
             <!-- Default panel contents -->
             <div class="panel-heading text-center">
-                <h3>Profile</h3>
+                <h3>Create group</h3>
             </div>
             <!-- Table -->
             <div class="table-responsive" id="table-holder">
@@ -28,7 +28,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>@Html.LabelFor(x => x.TrainingsPerWeek)</td>
+                                <td>@Html.LabelFor(x => x.TrainingsPerWeek, "Trainings per week")</td>
                                 <td>
                                     @Html.EditorFor(x => x.TrainingsPerWeek)
                                 </td>

@@ -11,6 +11,7 @@ namespace CoachLancer.Web.Areas.Coach.ViewModels
         public string Name { get; set; }
 
         [Required]
+        [Display(Name = "Trainings per week", Description = "Trainings per week")]
         [Range(1,14,ErrorMessage = "Training should be between 1 and 14")]
         public int TrainingsPerWeek { get; set; }
     }
