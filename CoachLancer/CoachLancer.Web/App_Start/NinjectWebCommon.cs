@@ -24,6 +24,7 @@ namespace CoachLancer.Web.App_Start
     using Microsoft.AspNet.Identity.Owin;
     using AutoMapper;
     using CoachLancer.Services.Contracts;
+    using CoachLancer.Web.Auth;
 
     public static class NinjectWebCommon
     {
@@ -86,11 +87,11 @@ namespace CoachLancer.Web.App_Start
             kernel.Bind<ISaveContext>().To<SaveContext>();
 
             // Account controller constructor
-            kernel.Bind<ApplicationSignInManager>().ToMethod(_ =>
-                HttpContext.Current.GetOwinContext().Get<ApplicationSignInManager>()
+            kernel.Bind<SignInManager>().ToMethod(_ =>
+                HttpContext.Current.GetOwinContext().Get<SignInManager>()
             );
-            kernel.Bind<ApplicationUserManager>().ToMethod(_ =>
-                HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>()
+            kernel.Bind<UserManager>().ToMethod(_ =>
+                HttpContext.Current.GetOwinContext().GetUserManager<UserManager>()
             );
             //
 

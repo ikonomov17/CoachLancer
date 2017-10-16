@@ -234,10 +234,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\FontAwesomeBundleConfig.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\CoachesController.cs" />
@@ -290,7 +288,6 @@
     <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\Manage\SetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Manage\VerifyPhoneNumberViewModel.cs" />
   </ItemGroup>
@@ -559,6 +556,7 @@
     <Content Include="Areas\Admin\Views\Groups\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Coaches\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\DisplayTemplates\CoachTableViewModel.cshtml" />
+    <Content Include="Areas\Admin\Views\Coaches\Create.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\admin.js" />
@@ -723,6 +721,10 @@
     <ProjectReference Include="..\CoachLancer.Services\CoachLancer.Services.csproj">
       <Project>{c0d8c685-8787-4fd8-8299-2896fe4d5189}</Project>
       <Name>CoachLancer.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoachLancer.Web.Auth\CoachLancer.Web.Auth.csproj">
+      <Project>{5163A7BC-06F1-4E18-8255-587CCD0E58A6}</Project>
+      <Name>CoachLancer.Web.Auth</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

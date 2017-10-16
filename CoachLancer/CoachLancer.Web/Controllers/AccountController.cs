@@ -1,5 +1,5 @@
 ﻿using CoachLancer.Data.Models;
-using CoachLancer.Data.Models.Enums;
+using CoachLancer.Web.Auth;
 using CoachLancer.Web.Extensions;
 using CoachLancer.Web.Models;
 using CoachLancer.Web.ViewModels.Factories;
@@ -13,21 +13,20 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.Security;
 
 namespace CoachLancer.Web.Controllers
 {
     [Authorize]
     public class AccountController : Controller
     {
-        private ApplicationSignInManager _signInManager;
-        private ApplicationUserManager _userManager;
+        private SignInManager _signInManager;
+        private UserManager _userManager;
         private readonly RoleManager<IdentityRole> roleManager;
         private readonly UserFactory userFactory;
 
         public AccountController(
-            ApplicationUserManager userManager,
-            ApplicationSignInManager signInManager,
+            UserManager userManager,
+            SignInManager signInManager,
             UserFactory userFactory,
             RoleManager<IdentityRole> roleManager)
         {
@@ -37,11 +36,11 @@ namespace CoachLancer.Web.Controllers
             this.userFactory = userFactory;
         }
 
-        public ApplicationSignInManager SignInManager
+        public SignInManager SignInManager
         {
             get
             {
-                return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
+                return _signInManager ?? HttpContext.GetOwinContext().Get<SignInManager>();
             }
             private set
             {
@@ -49,11 +48,11 @@ namespace CoachLancer.Web.Controllers
             }
         }
 
-        public ApplicationUserManager UserManager
+        public UserManager UserManager
         {
             get
             {
-                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<UserManager>();
             }
             private set
             {

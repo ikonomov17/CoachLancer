@@ -28,5 +28,11 @@ namespace CoachLancer.Web.Areas.Admin.Controllers
             var list = this.coachService.GetAll().Select(c => this.mapper.Map<CoachTableViewModel>(c)).ToList();
             return View(list);
         }
+
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View();
+        }
     }
 }
