@@ -67,13 +67,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CoachServiceTests\AddGroupToCoach_Should.cs" />
     <Compile Include="CoachServiceTests\Constructor_Should.cs" />
     <Compile Include="CoachServiceTests\GetAll_Should.cs" />
     <Compile Include="CoachServiceTests\GetCoachByUsername_Should.cs" />
     <Compile Include="CoachServiceTests\GetLastRegisteredCoaches_Should.cs" />
+    <Compile Include="CoachServiceTests\GroupBelongsToCoach_Should.cs" />
+    <Compile Include="CoachServiceTests\UpdateCoach_Should.cs" />
     <Compile Include="GroupServiceTests\Constructor_Should.cs" />
     <Compile Include="GroupServiceTests\CreateGroup_Should.cs" />
     <Compile Include="GroupServiceTests\GetAll_Should.cs" />
+    <Compile Include="GroupServiceTests\GetGroupById_Should.cs" />
+    <Compile Include="GroupServiceTests\GetGroupsByName_Should.cs" />
     <Compile Include="GroupServiceTests\GetLatestCreatedGroups_Should.cs" />
     <Compile Include="PlayerServiceTests\Constructor_Should.cs" />
     <Compile Include="PlayerServiceTests\GetAll_Should.cs" />

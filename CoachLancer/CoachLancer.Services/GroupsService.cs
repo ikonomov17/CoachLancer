@@ -57,6 +57,8 @@ namespace CoachLancer.Services
 
         public IEnumerable<Groups> GetGroupsByName(string name)
         {
+            Guard.WhenArgument(name, "name").IsNullOrEmpty().Throw();
+
             return this.groupsRepository.All.Where(x => x.Name.Contains(name)).ToList();
         }
     }

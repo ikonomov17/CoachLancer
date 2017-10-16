@@ -1,4 +1,5 @@
 ﻿using CoachLancer.Data.Models;
+using CoachLancer.Data.Models.Contracts;
 using System.Collections.Generic;
 
 namespace CoachLancer.Services.Contracts
@@ -13,7 +14,7 @@ namespace CoachLancer.Services.Contracts
 
         void UpdateCoach(Coach model);
 
-        void AddGroupToCoach(string username, Groups group);
+        void AddGroupToCoach(string username, IGroups group);
 
         bool GroupBelongsToCoach(string username, int groupId);
     }

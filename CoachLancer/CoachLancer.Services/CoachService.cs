@@ -1,5 +1,6 @@
 ﻿using Bytes2you.Validation;
 using CoachLancer.Data.Models;
+using CoachLancer.Data.Models.Contracts;
 using CoachLancer.Data.Repositories;
 using CoachLancer.Data.SaveContext;
 using CoachLancer.Services.Contracts;
@@ -57,10 +58,17 @@ namespace CoachLancer.Services
             this.context.Commit();
         }
 
-        public void AddGroupToCoach(string username, Groups group)
+        public void AddGroupToCoach(string username, IGroups group)
         {
-            var coach = this.coachesRepository.All.Where(c => c.UserName == username).FirstOrDefault();
-            coach.Groups.Add(group);
+            Guard.WhenArgument(username, "username").IsNullOrEmpty().Throw();
+            Guard.WhenArgument(group, "group").IsNull().Throw();
+
+            var coach = this.coachesRepository
+                .All
+                .Where(c => c.UserName == username)
+                .FirstOrDefault();
+
+            coach.Groups.Add(group as Groups);
             this.coachesRepository.Update(coach);
             this.context.Commit();
         }
