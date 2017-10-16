@@ -1,0 +1,11 @@
+﻿
+@using CoachLancer.Web.Areas.Admin.Models.GroupsViewModels
+@model GroupViewModel
+    
+<tr>
+    <td>
+        <a href="@Url.Action("Details","Groups", new {id = Model.Id})"> @Model.Name</a>
+    </td>
+    <td>@Model.TrainingsPerWeek</td>
+    <td>@Model.Players.Count</td>
+</tr>

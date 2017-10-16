@@ -1,10 +1,16 @@
 ﻿using AutoMapper;
 using CoachLancer.Data.SaveContext;
 using CoachLancer.Services.Contracts;
+using CoachLancer.Web.Areas.Admin.Models;
 using CoachLancer.Web.Areas.Admin.Models.CoachViewModels;
 using CoachLancer.Web.Auth.Contracts;
 using System.Linq;
+using System.Threading.Tasks;
+using System.Web;
 using System.Web.Mvc;
+using CoachLancer.Web.Auth;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace CoachLancer.Web.Areas.Admin.Controllers
 {
@@ -17,7 +23,7 @@ namespace CoachLancer.Web.Areas.Admin.Controllers
 
         public CoachesController(
             ICoachService coachService,
-            ISaveContext context, 
+            ISaveContext context,
             IMapper mapper,
             IUserService userManager)
         {
@@ -38,5 +44,7 @@ namespace CoachLancer.Web.Areas.Admin.Controllers
         {
             return View();
         }
+
+        
     }
 }
