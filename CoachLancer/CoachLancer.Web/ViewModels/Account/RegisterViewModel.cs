@@ -6,12 +6,10 @@ namespace CoachLancer.Web.Models
     public class RegisterViewModel
     {
         [Required]
-        [Remote("DoesUserEmailExist", "Account", HttpMethod = "POST", ErrorMessage = "This email is already used. Please enter a different email.")]
         [EmailAddress]
         public string Email { get; set; }
 
         [Required]
-        [Remote("DoesUserNameExist", "Account", HttpMethod = "POST", ErrorMessage = "User name already exists. Please enter a different user name.")]
         [StringLength(30, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 3)]
         public string Username { get; set; }
 

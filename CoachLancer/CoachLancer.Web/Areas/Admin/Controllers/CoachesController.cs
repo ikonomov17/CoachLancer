@@ -2,10 +2,8 @@
 using CoachLancer.Data.SaveContext;
 using CoachLancer.Services.Contracts;
 using CoachLancer.Web.Areas.Admin.Models.CoachViewModels;
-using System;
-using System.Collections.Generic;
+using CoachLancer.Web.Auth.Contracts;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace CoachLancer.Web.Areas.Admin.Controllers
@@ -15,12 +13,18 @@ namespace CoachLancer.Web.Areas.Admin.Controllers
         private readonly ISaveContext context;
         private readonly ICoachService coachService;
         private readonly IMapper mapper;
+        private readonly IUserService userManager;
 
-        public CoachesController(ICoachService coachService,ISaveContext context, IMapper mapper)
+        public CoachesController(
+            ICoachService coachService,
+            ISaveContext context, 
+            IMapper mapper,
+            IUserService userManager)
         {
             this.context = context;
             this.coachService = coachService;
             this.mapper = mapper;
+            this.userManager = userManager;
         }
         // GET: Admin/Coaches
         public ActionResult Index()

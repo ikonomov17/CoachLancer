@@ -1,4 +1,5 @@
 ﻿using CoachLancer.Data.Models;
+using CoachLancer.Web.Auth.Contracts;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 namespace CoachLancer.Web.Auth
 {
     // Configure the application sign-in manager which is used in this application.
-    public class SignInManager : SignInManager<User, string>
+    public class SignInManager : SignInManager<User, string>, ISignInService
     {
         public SignInManager(UserManager userManager, IAuthenticationManager authenticationManager)
             : base(userManager, authenticationManager)

@@ -4,5 +4,8 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Create</h2>
+@using CoachLancer.Web.Areas.Admin.Models
+@model CreateProfileViewModel
+
+@Html.EditorForModel()
 

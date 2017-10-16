@@ -1,5 +1,6 @@
 ﻿using CoachLancer.Data;
 using CoachLancer.Data.Models;
+using CoachLancer.Web.Auth.Contracts;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
@@ -9,7 +10,7 @@ using System;
 namespace CoachLancer.Web.Auth
 {
     // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
-    public class UserManager : UserManager<User>
+    public class UserManager : UserManager<User>, IUserService
     {
         public UserManager(IUserStore<User> store)
             : base(store)
@@ -62,6 +63,20 @@ namespace CoachLancer.Web.Auth
                     new DataProtectorTokenProvider<User>(dataProtectionProvider.Create("ASP.NET Identity"));
             }
             return manager;
+        }
+
+        public User GetByUserName(string userName)
+        {
+            var user = UserManagerExtensions.FindByName(this, userName);
+
+            return user;
+        }
+
+        public User GetByEmail(string email)
+        {
+            var user = UserManagerExtensions.FindByEmail(this, email);
+
+            return user;
         }
     }
 }

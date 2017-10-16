@@ -1,0 +1,109 @@
+﻿@using CoachLancer.Web.Areas.Coach.ViewModels
+@model ProfileViewModel
+
+@using (Ajax.BeginForm("Update", "Profile", new AjaxOptions()
+{
+    HttpMethod = "POST",
+    AllowCache = false,
+    UpdateTargetId = "table-holder",
+    InsertionMode = InsertionMode.Replace
+}))
+{
+    @Html.AntiForgeryToken()
+    <table class="table table-hover">
+        <tbody>
+        <tr>
+            <td colspan="2">
+                @Html.ValidationMessageFor(x => x.FirstName, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.FirstName)</td>
+            <td>
+                @Html.EditorFor(x => x.FirstName)
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                @Html.ValidationMessageFor(x => x.LastName, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.LastName)</td>
+            <td>
+                @Html.EditorFor(x => x.LastName)
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.Email)</td>
+            <td>
+                @Html.EditorFor(x => x.Email)
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                @Html.ValidationMessageFor(x => x.PricePerHourTraining, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.PricePerHourTraining)</td>
+            <td>
+                @Html.EditorFor(x => x.PricePerHourTraining)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.Age)</td>
+            <td>
+                @Html.EditorFor(x => x.Age)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.Location)</td>
+            <td>
+                @Html.EditorFor(x => x.Location)
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                @Html.ValidationMessageFor(x => x.DateOfBirth, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(x => x.DateOfBirth)</td>
+            <td>
+                @Html.TextBoxFor(x => x.DateOfBirth, "{0:MM/dd/yyyy}", new { id = "datepicker" })
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="panel-footer">
+        <button>Sumbit</button>
+    </div>
+}
+
+
+@Scripts.Render("~/bundles/jqueryval")
+
+
+<script>
+    $(document).ready(function () {
+
+        $('#datepicker').datepicker({
+            dateFormat: "dd-mm-yy",
+            showOtherMonths: true,
+            selectOtherMonths: true,
+            changeMonth: true,
+            changeYear: true,
+            minDate: new Date(1900, 1, 1),
+            maxDate: "0D",
+            yearRange: "1900:" + new Date().getFullYear(),
+            defaultDate: 0
+        });
+
+    });
+</script>

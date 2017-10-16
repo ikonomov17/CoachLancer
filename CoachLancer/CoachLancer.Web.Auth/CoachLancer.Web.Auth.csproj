@@ -78,6 +78,8 @@
     <Compile Include="Contracts\ISignInService.cs" />
     <Compile Include="Contracts\IUserService.cs" />
     <Compile Include="EmailService.cs" />
+    <Compile Include="Extensions\IdentityExtensions.cs" />
+    <Compile Include="Extensions\UserManagerExtensions.cs" />
     <Compile Include="SmsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignInManager.cs" />

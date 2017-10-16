@@ -7,6 +7,8 @@ namespace CoachLancer.Web.Auth.Contracts
 {
     public interface IUserService : IDisposable
     {
+        User GetByEmail(string email);
+
         User GetByUserName(string userName);
 
         Task<IdentityResult> CreateAsync(User user);
