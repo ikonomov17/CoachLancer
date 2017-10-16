@@ -58,6 +58,7 @@
     <Compile Include="Coach.cs" />
     <Compile Include="Contracts\IAuditable.cs" />
     <Compile Include="Contracts\IDeletable.cs" />
+    <Compile Include="Contracts\IGroups.cs" />
     <Compile Include="Enums\GenderEnum.cs" />
     <Compile Include="Enums\PositionEnum.cs" />
     <Compile Include="Gender.cs" />

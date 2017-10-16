@@ -1,13 +1,10 @@
-﻿using CoachLancer.Services.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Bytes2you.Validation;
 using CoachLancer.Data.Models;
 using CoachLancer.Data.Repositories;
 using CoachLancer.Data.SaveContext;
-using Bytes2you.Validation;
+using CoachLancer.Services.Contracts;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace CoachLancer.Services
 {
@@ -18,6 +15,9 @@ namespace CoachLancer.Services
 
         public PlayersService(IEfRepository<Player> playersRepository,ISaveContext context)
         {
+            Guard.WhenArgument(playersRepository, "players repository").IsNull().Throw();
+            Guard.WhenArgument(context, "context").IsNull().Throw();
+
             this.playersRepository = playersRepository;
             this.context = context;
         }

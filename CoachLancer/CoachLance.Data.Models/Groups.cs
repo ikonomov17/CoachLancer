@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CoachLancer.Data.Models
 {
-    public class Groups : IDeletable, IAuditable
+    public class Groups : IGroups
     {
         public Groups()
         {
