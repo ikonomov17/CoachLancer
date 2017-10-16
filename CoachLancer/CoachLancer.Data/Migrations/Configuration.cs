@@ -35,19 +35,20 @@ namespace CoachLancer.Data.Migrations
             {
                 var roleStore = new RoleStore<IdentityRole>(context);
                 var roleManager = new RoleManager<IdentityRole>(roleStore);
-                var admin = new IdentityRole { Name = "Admin" };
-                var coach = new  IdentityRole { Name = "Coach" };
-                var player = new  IdentityRole { Name = "Player" };
+                var admin = new IdentityRole {Name = "Admin"};
+                var coach = new IdentityRole {Name = "Coach"};
+                var player = new IdentityRole {Name = "Player"};
                 roleManager.Create(admin);
                 roleManager.Create(coach);
                 roleManager.Create(player);
 
                 var userStore = new UserStore<User>(context);
                 var userManager = new UserManager<User>(userStore);
-                var user = new User {
+                var user = new User
+                {
                     UserName = AdministratorUserName,
                     Email = AdministratorUserName,
-                    EmailConfirmed = true ,
+                    EmailConfirmed = true,
                     CreatedOn = DateTime.Now
                 };
                 userManager.Create(user, AdministratorPassword);

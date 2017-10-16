@@ -238,6 +238,12 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CoachesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\GroupsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PlayersController.cs" />
+    <Compile Include="Areas\Admin\Models\CoachViewModels\CoachTableViewModel.cs" />
     <Compile Include="Areas\Coach\CoachAreaRegistration.cs" />
     <Compile Include="Areas\Coach\Controllers\CoachController.cs" />
     <Compile Include="Areas\Coach\Controllers\GroupsController.cs" />
@@ -548,6 +554,12 @@
     <Content Include="Areas\Player\Views\Groups\Details.cshtml" />
     <Content Include="Areas\Player\Views\Shared\EditorTemplates\PlayerViewModel.cshtml" />
     <Content Include="Areas\Player\Views\Shared\DisplayTemplates\PlayerViewModel.cshtml" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Areas\Admin\Views\Groups\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Coaches\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\DisplayTemplates\CoachTableViewModel.cshtml" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\admin.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -686,6 +698,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Views\Players\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
